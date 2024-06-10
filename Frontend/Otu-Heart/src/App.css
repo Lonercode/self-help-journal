@@ -1,0 +1,1217 @@
+#root {
+  max-width: 1280px;
+  padding: 0rem;
+  text-align: center;
+}
+
+
+.theNav {
+  background-color: black;
+  overflow:hidden;
+  width: 100vw;
+  height: 12vh;
+  padding-top: 3vh;
+  padding-bottom: 2vh;
+  
+
+}
+
+.theNav a{
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 3vw;
+  
+}
+
+
+
+.menu {
+ position: relative;
+  margin-top: 3vh;
+  background-image: url('\\images\\doodles.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+}
+
+.circle1 {
+  margin-top: 6vw;
+  color: grey;
+  border-radius: 50%;
+  width: 30vw;
+  height: 30vw;
+  background-color: white;
+  position: absolute;
+  
+  border: 2px solid black;
+  margin-left: 60vw;
+  box-shadow: -10px -10px;
+ 
+}
+
+.theNav1{
+  position: absolute;
+  z-index: 1;
+  margin-top: 28vh;
+  margin-left: 68vw;
+  width: 15vw;
+}
+
+.theNav1 h2{
+  font-family:cursive;
+}
+
+.theNav1 li{
+  text-decoration: none;
+  list-style: decimal;
+  font-family:cursive;
+  font-size: 1.5vw;
+}
+
+.theNav1 li a{
+  color: black;
+}
+
+.book{
+  margin-left: 10vw;
+  margin-top: 3vh;
+  background-color: white;
+  width: 85vw;
+  height:90vh;
+  position: absolute;
+  z-index: -3;
+  border-radius: 1vw;
+  box-shadow: -10px -10px;
+}
+
+.theNav1 li a:hover{
+  color: blue;
+  font-size: 2vw;
+}
+
+.line{
+  height: 90vh;
+  
+  margin-left: 50vw;
+  width: 2px;
+  margin-top: 2vh;
+  background-color: black;
+  position: absolute;
+}
+
+
+
+.loginForm, .registerForm {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-top: 12vh;
+  width: 40%;
+  margin-left: 30%;
+  position: absolute;
+  
+}
+
+
+.loginForm [type=text], select, input[type=password], select, input[type=email], select, 
+.registerForm [type=text], select, input[type=password], select, input[type=email], select{
+  width: 100%;
+  padding: 15px 20px;
+  margin: 10px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.loginForm label, .registerForm label{
+ float:left;
+}
+
+#Loginbut1{
+  float:left;
+}
+
+#Loginbut2{
+  float:right;
+}
+
+.loginForm button a{
+  text-decoration: none;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+#Loginmusicguy{
+  transform:scale(0.3);
+  margin-top: -40vh;
+  margin-left: -10vw;
+  position: absolute;
+}
+
+#Loginmeditate{
+  transform:scale(0.2);
+  margin-top: -25vh;
+  margin-left: 45vw;
+  position:absolute;
+}
+
+#Loginwork{
+  transform:scale(0.3);
+  margin-top: -40vh;
+  margin-left: 53vw;
+  position:absolute;
+}
+
+#Loginearth{
+  transform:scale(0.3);
+  margin-top: -40vh;
+  margin-left: -10vw;
+  position:absolute;
+}
+
+#Loginwrite{
+  transform:scale(0.3);
+  margin-top: 14vh;
+  margin-left: 53vw;
+  position:absolute;
+}
+
+
+#Loginmount{
+  transform:scale(0.3);
+  margin-top: 9vh;
+  margin-left: -10vw;
+  position:absolute;
+}
+
+.about{
+  text-align: center;
+  width: 50vw;
+  margin: auto;
+  font-size: 2vw;
+  background-color: whitesmoke;
+  border-radius: 1vw;
+  padding: 2vw 2vw;
+  margin-top: 2vh;
+}
+
+#Aboutbutterfly{
+  transform:scale(0.3);
+  margin-top: -100vh;
+  margin-left: -64vw;
+  position:absolute;
+}
+
+#Aboutflowers{
+  transform:scale(0.3);
+  margin-top: -80vh;
+  margin-left: 10vw;
+  position:absolute;
+}
+
+.notHere{
+  margin:auto;
+}
+
+.notHere p {
+  margin: auto;
+}
+
+.gallery h3{
+  margin-top: 0vh;
+  font-style: italic;
+  font-family: cursive;
+}
+
+.all{
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+ 
+}
+
+.theNav .footer{
+  font-size: 1.3vw;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+
+span{
+  cursor: pointer;
+  position: absolute;
+  margin-top: -8vh;
+  color: white;
+  right:3vw;
+}
+
+#txtarea{
+  height: 60vh;
+}
+
+#dashboardButtons button{
+  width:23vw;
+  border-radius: 1vw;
+  margin-right: 3vw;
+  
+}
+
+
+.stuff {
+  margin-top: 3vh;
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: white;
+  
+}
+
+.none {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  
+}
+
+.entry {
+  background-color: black;
+  width: 70%;
+  height: fit-content;
+  object-fit: cover;
+  position: relative;
+  border-radius: 1vw;
+  margin: auto;
+  padding-bottom: 2vh;
+  margin-bottom: 8vh;
+}
+
+
+.entry img{
+  display: block;
+  border-radius: 1vw;
+  height: 60vh;
+  width: 100%;
+  object-fit: cover;
+  margin-right: 6vw;
+  margin-top: 4vh;
+
+}
+
+.entry p{
+  width: 40vw;
+  margin: auto;
+  text-align: center;
+}
+
+
+#dashboardButtons {
+  margin-top: 6vh;
+}
+
+
+#name {
+  margin-left: -80vw;
+  font-family: cursive;
+  font-size: 2vw;
+}
+
+.entryDetails{
+  text-align: center;
+}
+
+.entryDetails img{
+  height: auto;
+  width: 80%;
+  border-radius: 2vw;
+  border-style: solid;
+}
+
+.entryDetails h3{
+  font-size: 3vw;
+}
+
+.entryDetails p{
+  font-size: 1.5vw;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+ 
+}
+
+#dateTime {
+  font-size: 1.2vw;
+}
+
+#leisure{
+  transform:scale(0.3);
+  margin-top: -150vh;
+  margin-left: -67vw;
+  position:absolute;
+}
+
+#tablet{
+  transform:scale(0.3);
+  margin-top: -100vh;
+  margin-left: -5vw;
+  position:absolute;
+}
+
+#affirmHome {
+  margin: 0;
+  
+}
+
+#confirmRegButton{
+  width: 12vw;
+  margin: auto;
+}
+
+.lottie {
+  margin: auto;
+}
+
+
+
+/*Mobiles*/
+
+@media (max-width: 750px){
+
+  body {
+    overflow-x: hidden;
+    margin: auto;
+  }
+  .theNav {
+    height: 8vh;
+  }
+
+  .theNav a{
+    font-size: 5vw;
+  }
+
+  .menu {
+    position:relative;
+    margin-top: 3vh;
+  }
+  
+  .circle1 {
+
+    margin-top: 23vw;
+    color: grey;
+    width: 65vw;
+    height: 65vw;
+    margin-left: 18vw;
+    box-shadow: -10px -10px;
+   
+  }
+
+  .theNav1{
+    margin-top: 13vh;
+    margin-left: 33vw;
+    width: 30vw;
+  }
+  
+  .theNav1 li{
+    font-family:cursive;
+    font-size: 4.3vw;
+  }
+
+  .book{
+    margin-left: 6vw;
+    margin-top: 3vh;
+    width: 90vw;
+    height:55vh;
+    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #4d4b4b;
+  }
+
+  .theNav1 li a:hover{
+    font-size: 4.5vw;
+  }
+  
+  .line{
+    visibility: hidden;
+  }
+  
+  .pen{
+    z-index: 1;
+    position: absolute;
+    transform:scale(2);
+    width: 5vw;
+    margin-top: 26vh;
+    margin-left: 15vw;
+  }
+  
+  
+
+  .theNav .footer{
+    font-size: 2vw;
+  
+  }
+
+
+  .loginForm, .registerForm {
+    border-radius: 2vw;
+    padding: 20px;
+    margin-top: 15vh;
+    width: 70%;
+    margin-left: 10%;
+   
+  }
+
+  #Loginmusicguy{
+    display: none;
+  }
+  
+  #Loginmeditate{
+    transform:scale(0.2);
+    margin-top: 10vh;
+    margin-left: -40vw;
+  }
+  
+  #Loginwork{
+    display: none;
+  }
+  
+  #Loginearth{
+    transform:scale(0.2);
+    margin-top: -35vh;
+    margin-left: -20vw;
+  }
+  
+  #Loginwrite{
+   display: none;
+  }
+  
+  #Loginmount{
+   display:none;
+  }
+
+  .about{
+    width: 60vw;
+    height: 70vh;
+    font-size: 4.5vw;
+    background-color: whitesmoke;
+  }
+  
+  #Aboutbutterfly{
+   display: none;
+  }
+  
+  #Aboutflowers{
+    transform:scale(0.5);
+    margin-top: -20vh;
+    margin-left: -90vw;
+  }
+
+  .entry {
+    
+    width: 90%;
+    border-radius: 2vw;
+    margin: auto;
+    margin-bottom: 3vh;
+  }
+  
+  #name {
+    font-size: 4vw;
+    margin-right: -15vw;
+  }
+
+  span{
+    margin-top: -6vh;
+    right:7vw;
+  }
+
+  .entry p{
+    width: 60vw;
+  }
+
+  .entryDetails h3{
+    font-size: 5vw;
+  }
+  
+  .entryDetails p{
+    font-size: 4vw;
+    width: 80%;
+    text-align:justify;
+    margin: auto;
+   
+  }
+
+  .entryDetails button{
+    width: 20vw;
+    height: 8vh;
+    font-size: 3.6vw;
+  }
+  
+  #dateTime {
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  #leisure{
+   display: none;
+  }
+  
+  #tablet{
+    display:none;
+  }
+
+  .entryDetails img{
+    height: auto;
+    width: 95%;
+    border-radius: 2vw;
+    border-style: solid;
+  }
+
+  .menu {
+    overflow-y: hidden;
+    height: 70vh;
+  }
+
+  .loginForm input {
+    font-size: 4vw;
+  }
+
+  .loginForm textarea {
+    font-size: 4vw;
+
+}
+
+
+.image-gallery-slide img{
+  width: 80vw;
+  height: 80vh;
+ 
+}
+
+.notHere p{
+  width: 40vw;
+}
+}
+
+/* Tablets */ 
+
+@media (min-width: 751px) and (max-width:1080px){
+  body {
+    overflow-x: hidden;
+  }
+   .theNav {
+    height: 8vh;
+  }
+
+  .theNav1 li{
+    font-family:cursive;
+    font-size: 4.5vw;
+  }
+
+ .theNav1{
+    margin-top: 18vh;
+    margin-left: 37vw;
+    width: 30vw;
+  }
+
+  .theNav1 h2{
+  font-family:cursive;
+  font-size: 5vw;
+}
+
+.theNav1 li a:hover{
+  font-size: 5vw;
+}
+  .menu {
+    position:relative;
+    margin-top: 3vh;
+  }
+  
+  .circle1 {
+
+    margin-top: 23vw;
+    color: grey;
+    width: 70vw;
+    height: 65vw;
+    margin-left: 18vw;
+    box-shadow: -10px -10px;
+   
+  }
+  
+  
+  .book{
+    margin-left: 6vw;
+    margin-top: 3vh;
+    width: 90vw;
+    height:55vh;
+    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #4d4b4b;
+  }
+
+ 
+  
+  .line{
+    visibility: hidden;
+  }
+  
+  .pen{
+    z-index: 1;
+    position: absolute;
+    transform:scale(3);
+    width: 5vw;
+    margin-top: 34vh;
+    margin-left: 15vw;
+  }
+  
+  .theNav a{
+    
+    font-size: 5vw;
+    
+  }
+
+  .theNav .footer{
+    font-size: 3vw;
+  
+  }
+
+
+  .loginForm, .registerForm {
+    border-radius: 2vw;
+    padding: 40px;
+    margin-top: 15vh;
+    width: 70%;
+    margin-left: 10%;
+    font-size: 4vw;
+   
+  }
+
+  #Loginmusicguy{
+   display: none;
+  }
+  
+  #Loginmeditate{
+   display: none;
+  }
+  
+  #Loginwork{
+    visibility: hidden;
+  }
+  
+  #Loginearth{
+    transform:scale(0.3);
+    margin-top: -18vh;
+    margin-left: -23vw;
+  }
+  
+  #Loginwrite{
+    transform:scale(0.3);
+    margin-top: 53vh;
+    margin-left: 33vw;
+  }
+  
+  #Loginmount{
+   display: none;
+  }
+
+  .about{
+    width: 80vw;
+    height: 70vh;
+    font-size: 4.5vw;
+    background-color: whitesmoke;
+  }
+  
+  #Aboutbutterfly{
+   display: none;
+  }
+  
+  #Aboutflowers{
+    transform:scale(0.8);
+    margin-top: -10vh;
+    margin-left: -58vw;
+  }
+
+  .entry {
+    
+    width: 95%;
+    border-radius: 2vw;
+    margin: auto;
+    margin-bottom: 3vh;
+    font-size: 4vw;
+  }
+
+  .entry h3{
+    font-size: 5.5vw;
+  }
+
+  .entry p{
+    width: 60vw;
+    margin: auto;
+    text-align: center;
+  }
+  
+  
+  #name {
+    font-size: 4.3vw;
+    margin-right: -15vw;
+  }
+
+  span{
+    margin-top: -6vh;
+    right:7vw;
+  }
+
+
+  .entryDetails h3{
+    font-size: 5vw;
+  }
+  
+  .entryDetails p{
+    font-size: 4vw;
+    width: 80%;
+    text-align:justify;
+    margin: auto;
+   
+  }
+  
+  #dateTime {
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .entryDetails button{
+    width: 12vw;
+    height: 8vh;
+    font-size: 2.8vw;
+  }
+
+  #leisure{
+    transform:scale(0.3);
+    margin-top: -10vh;
+    margin-left: -70vw;
+  }
+  
+  #tablet{
+    display: none;
+  }
+
+  .entryDetails img{
+    height: auto;
+    width: 95%;
+    border-radius: 2vw;
+    border-style: solid;
+  }
+
+  .menu {
+    overflow-y: hidden;
+    height: 70vh;
+  }
+
+  .loginForm input {
+    font-size: 4vw;
+  }
+
+  .loginForm textarea {
+    font-size: 4vw;
+  }
+
+  #dashboardButtons button{
+    width:30vw;
+    border-radius: 1vw;
+    margin-right: 3vw;
+    font-size: 2.9vw;
+  }
+  
+  span{
+    cursor: pointer;
+    position: absolute;
+    margin-top: -6vh;
+    color: white;
+    right:6vw;
+  }
+
+  
+
+  .image-gallery-slide img{
+    width: 80vw;
+    height: 80vh;
+   
+  }
+
+  .gallery h3{
+    font-size: 4vw;
+   
+  }
+    
+  
+
+}
+
+
+/* Smaller Desktops */
+
+@media (min-width: 1081px) and (max-width: 1440px){
+  #Loginmusicguy{
+    transform:scale(0.3);
+    margin-top: -20vh;
+    margin-left: -10vw;
+    position: absolute;
+  }
+  
+  #Loginmeditate{
+    transform:scale(0.25);
+    margin-top: -20vh;
+    margin-left: 45vw;
+    position:absolute;
+  }
+
+  span{
+    cursor: pointer;
+    position: absolute;
+    margin-top: -6vh;
+    color: white;
+    right:3vw;
+  }
+
+  #Aboutbutterfly{
+    transform:scale(0.3);
+    margin-top: -70vh;
+    margin-left: -58vw;
+    position:absolute;
+  }
+  
+  #Aboutflowers{
+    transform:scale(0.3);
+    margin-top: -40vh;
+    margin-left: 15vw;
+    position:absolute;
+  }
+
+  .about{
+    height:fit-content;
+    margin-left: 23vw;
+   
+  }
+
+ 
+  .image-gallery-slide img{
+    width: 80vw;
+    height: 80vh;
+   
+  }
+
+  .gallery h3{
+    font-size: 3vw;
+    margin-left: 10%;
+  }
+    
+  #name {
+    font-size: 3vw;
+    margin-right: -15vw;
+  }
+
+  #leisure{
+    transform:scale(0.3);
+    margin-top: -120vh;
+    margin-left: -67vw;
+    position:absolute;
+  }
+
+  #tablet{
+    transform:scale(0.3);
+    margin-top: -100vh;
+    margin-left: 6vw;
+    position:absolute;
+  }
+
+  .notHere p {
+    font-size: 2vw;
+  }
+
+}
+
+/* Bigger Desktops */
+
+@media (min-width: 1441px) and (max-width: 2000px){
+
+  body{
+    overflow-x: hidden;
+    margin: auto;
+  }
+
+  .loginForm, .registerForm {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 3vw;
+    margin-top: 12vh;
+    width: 40%;
+    margin-left: 40%;
+    position: absolute;
+    font-size: 1.5vw;
+    
+  }
+  
+  
+  #Loginmusicguy{
+    transform:scale(0.4);
+    margin-top: -20vh;
+    margin-left: -10vw;
+    position: absolute;
+  }
+  
+  #Loginmeditate{
+    transform:scale(0.35);
+    margin-top: -10vh;
+    margin-left: 53vw;
+    position:absolute;
+  }
+
+  span{
+    cursor: pointer;
+    position: absolute;
+    margin-top: -5vh;
+    color: white;
+    right:4vw;
+  }
+
+  #Loginwork{
+    transform:scale(0.3);
+    margin-top: -20vh;
+    margin-left: 53vw;
+    position:absolute;
+  }
+  
+  #Loginearth{
+    transform:scale(0.3);
+    margin-top: -20vh;
+    margin-left: -5vw;
+    position:absolute;
+  }
+  
+  #Loginwrite{
+    transform:scale(0.3);
+    margin-top: 24vh;
+    margin-left: 53vw;
+    position:absolute;
+  }
+  
+  
+  #Loginmount{
+    transform:scale(0.3);
+    margin-top: 19vh;
+    margin-left: -5vw;
+    position:absolute;
+  }
+
+  #Aboutbutterfly{
+    transform:scale(0.3);
+    margin-top: -70vh;
+    margin-left: -50vw;
+    position:absolute;
+  }
+  
+  #Aboutflowers{
+    transform:scale(0.4);
+    margin-top: -40vh;
+    margin-left: 20vw;
+    position:absolute;
+  }
+  
+  .about{
+    height:fit-content;
+    margin-left: 23vw;
+   
+  }
+
+  .image-gallery {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-left: 6vw;
+  }
+
+  
+  .image-gallery-slide img{
+    width: 80vw;
+    height: 80vh;
+    object-position: center center;
+   
+  }
+
+  .gallery h3{
+    font-size: 3vw;
+    margin-left: 30%;
+  }
+
+  #name {
+    font-size: 3vw;
+    margin-right: -40vw;
+  }
+
+
+  #leisure{
+    transform:scale(0.3);
+    margin-top: -120vh;
+    margin-left: -55vw;
+    position:absolute;
+  }
+
+  #tablet{
+    transform:scale(0.3);
+    margin-top: -100vh;
+    margin-left: 6vw;
+    position:absolute;
+  }
+
+
+  .notHere p {
+    font-size: 2vw;
+  }
+
+  .notHere {
+    margin-left: 30%;
+  }
+  
+}
+
+
+/* Seriously Large Desktop Screens */
+
+@media (min-width: 2001px) and (max-width: 3000px){
+  .theNav1 h2{
+    font-size: 2.3vw;
+  }
+
+  .loginForm, .registerForm {
+    border-radius: 2vw;
+    background-color: #f2f2f2;
+    padding: 2vw;
+    margin-top: 12vh;
+    width: 80%;
+    margin-left: 50%;
+    position: absolute;
+    font-size: 2vw;
+    
+  }
+
+.loginForm [type=text], select, input[type=password], select, input[type=email], select, 
+.registerForm [type=text], select, input[type=password], select, input[type=email], select{
+  width: 100%;
+  padding: 1.5vw 1.3vw;
+  margin: 2vw 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 1.3vw;
+  box-sizing: border-box;
+  font-size: 1.5vw;
+}
+  
+#Loginmusicguy{
+  transform:scale(0.55);
+  margin-top: -13vh;
+  margin-left: 0vw;
+  position: absolute;
+}
+
+#Loginmeditate{
+  transform:scale(0.45);
+  margin-top: 10vh;
+  margin-left: 66vw;
+  position:absolute;
+}
+
+span{
+  cursor: pointer;
+  position: absolute;
+  margin-top: -12vh;
+  color: white;
+  right:3vw;
+}
+
+#Loginwork{
+  transform:scale(0.4);
+  margin-top: -10vh;
+  margin-left: 70vw;
+  position:absolute;
+}
+
+#Loginearth{
+  transform:scale(0.4);
+  margin-top: -10vh;
+  margin-left: -3vw;
+  position:absolute;
+}
+
+#Loginwrite{
+  transform:scale(0.4);
+  margin-top: 70vh;
+  margin-left: 70vw;
+  position:absolute;
+}
+
+
+#Loginmount{
+  transform:scale(0.4);
+  margin-top: 70vh;
+  margin-left: -3vw;
+  position:absolute;
+}
+
+.about{
+  height:fit-content;
+  margin-left: 23vw;
+ 
+}
+
+#Aboutbutterfly{
+  transform:scale(0.3);
+  margin-top: -20vh;
+  margin-left: -32vw;
+  position:absolute;
+}
+
+.image-gallery {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-left: 30%;
+}
+
+
+.image-gallery-slide img{
+  width: 80vw;
+  height: 80vh;
+ 
+}
+
+.gallery h3{
+  font-size: 3vw;
+  margin-left: 50%;
+}
+
+#leisure{
+  transform:scale(0.3);
+  margin-top: -120vh;
+  margin-left: -50vw;
+  position:absolute;
+}
+
+#tablet{
+  transform:scale(0.3);
+  margin-top: -100vh;
+  margin-left: 12vw;
+  position:absolute;
+}
+
+.notHere p {
+  font-size: 2vw;
+}
+
+.notHere {
+  margin-left: 40vw;
+}
+  
+}
