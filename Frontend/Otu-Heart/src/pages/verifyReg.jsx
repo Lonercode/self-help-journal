@@ -39,7 +39,7 @@ function VerifyRegistration(){
         const handleSubmit = event => {
             event.preventDefault()
             
-            axios.get(`http://localhost:3600/otu-heart/verifyAccount`,
+            axios.get(`/api/otu-heart/verifyAccount`,
             config)
             .then((res) => handleSuccess(res.data.message))
             .then((console.log(token)))

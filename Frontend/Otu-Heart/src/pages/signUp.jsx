@@ -82,7 +82,7 @@ function Register(){
      const handleSubmit = (e) => {
         e.preventDefault()
 
-        axios.post('http://localhost:3600/otu-heart/register', {
+        axios.post('/api/otu-heart/register', {
             ...user,
             confirmPassword: password1
             

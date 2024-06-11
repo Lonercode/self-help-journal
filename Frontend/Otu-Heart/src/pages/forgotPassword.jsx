@@ -47,7 +47,7 @@ function ForgotPassword(){
     const handleSubmit = event => {
         event.preventDefault()
 
-        axios.post('http://localhost:3600/otu-heart/forgotPassword',{email:email}
+        axios.post('/api/otu-heart/forgotPassword',{email:email}
             )
             .then((res) => handleSuccess(res.data.message, res.data.token))
             .then(() => setEmail(""))

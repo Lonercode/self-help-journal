@@ -60,7 +60,7 @@ function ResetPassword(){
     const handleSubmit = event => {
         event.preventDefault()
 
-        axios.post('http://localhost:3600/otu-heart/resetPassword',{password:password}, config
+        axios.post('/api/otu-heart/resetPassword',{password:password}, config
             )
             .then((res) => handleSuccess(res.data.message))
             .then(() => setPassword(""))

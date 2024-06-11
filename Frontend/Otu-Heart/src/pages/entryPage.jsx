@@ -21,7 +21,7 @@ const PageEntry = () => {
   
 
     
-  axios.get(`http://localhost:3600/otu-heart/myEntry?_id=${id}`, config)
+  axios.get(`/api/otu-heart/myEntry?_id=${id}`, config)
   .then((res) => setEntry(res.data.message))
   setTimeout(() => {
     cookies.set('id', entry._id, {

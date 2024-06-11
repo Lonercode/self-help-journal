@@ -95,7 +95,7 @@ function UpdateEntry(){
           function handleDelete(e){
             e.preventDefault()
     
-            axios.delete(`http://localhost:3600/otu-heart/deleteEntry?_id=${id}`,
+            axios.delete(`/api/otu-heart/deleteEntry?_id=${id}`,
             config,
             {withCredentials: true}
             )

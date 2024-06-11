@@ -80,7 +80,7 @@ function Login(){
 
     function handleSubmit(e){
         e.preventDefault()
-        axios.post('http://localhost:3600/otu-heart/login', {
+        axios.post('/api/otu-heart/login', {
             ...user,
             
         },

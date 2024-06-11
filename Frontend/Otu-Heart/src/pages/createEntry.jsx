@@ -66,7 +66,7 @@ function CreateEntry(){
             formData.append('content', content)
             
 
-            axios.post('http://localhost:3600/otu-heart/createEntry',formData,
+            axios.post('/api/otu-heart/createEntry',formData,
             config,
             {withCredentials: true}
             )

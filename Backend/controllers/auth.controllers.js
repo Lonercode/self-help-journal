@@ -40,7 +40,7 @@ const signUp = async(req, res, next) => {
             else{
                 const person = await auth.create(newUser)
                 const userToken = createRegToken(person)
-                const link = `http://localhost:5173/verify`
+                const link = `https://otu-heart.netlify.app/verify`
                 
                 await sendMail(
                     person.email,
@@ -174,7 +174,7 @@ const forgotPassword = async(req, res, next) => {
         const userToken = createToken(user)
 
        
-        const link = `http://localhost:5173/resetPassword?id=${user._id}&token=${userToken}`
+        const link = `https://otu-heart.netlify.app/resetPassword?id=${user._id}&token=${userToken}`
         
         await sendMail(
             user.email,
