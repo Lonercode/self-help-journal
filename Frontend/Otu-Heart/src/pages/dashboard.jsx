@@ -18,14 +18,14 @@ const UserEntries = () => {
   const [entries, setEntries] = useState([]);
 
 
-    axios.get('http://localhost:3600/otu-heart/myEntries', config)
+    axios.get('/api/otu-heart/myEntries', config)
     .then((res) => setEntries(res.data.message))
   
   
   
   let val = entries.map((item) => {
     const dateTime =  dateFormat(`${item.date}`, "mmmm dS, yyyy")
-    const imageLink = `http://localhost:3600/${item.image}`
+    const imageLink = `/api/${item.image}`
     cookies.set('id', item._id, {
       path: '/entryPage'
     })
