@@ -45,7 +45,7 @@ function App() {
   return (
     <>
     <Nav/>
-    <div className='all'>
+ 
     <BrowserRouter>
     <Routes>
       <Route path='/' element = {<Home/>}/>
@@ -66,7 +66,7 @@ function App() {
       <Route path = '*' element = {<NotFound/>}/>
     </Routes>
     </BrowserRouter>
-    </div>
+
     
   
    </>

@@ -98,18 +98,18 @@ function Login(){
 
     return (
         <>
+       
         <div className="loginForm">
             <h3>Welcome Back &#128522;</h3>
             <ToastContainer className="toasty"/>
         <form method="post" onSubmit={handleSubmit}>
             <label id= "email"><b>Email</b></label>
             <input id="email" type="email" value={email} onChange={handleOnChange} name = "email"></input>
-            <label id = "password"><b>Password</b></label>
+            <label id = "password"><b>Password</b><span class = "flex justify-around items-center" onClick={handleEye}>
+                <Icon class="absolute mr-10" icon={icon} size={25}/>
+            </span></label> 
             <input type={type} id="pass" name="password" value={password}
             onChange={handleOnChange}></input>
-            <span class = "flex justify-around items-center" onClick={handleEye}>
-                <Icon class="absolute mr-10" icon={icon} size={25}/>
-            </span>
             <button type="submit" id="Loginbut1">Login</button>
             <a href="/"><button type="button" id="Loginbut2">Home</button></a>
         </form>
@@ -120,7 +120,9 @@ function Login(){
 
         <img src = "\images\music.png" id = "Loginmusicguy"/>
         <img src = "\images\meditate.png" id = "Loginmeditate"/>
+     
         </>
+        
     )
 }
 

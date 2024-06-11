@@ -112,18 +112,16 @@ function Register(){
             <input id="nme" type="text" value={name} onChange={handleOnChange} name = "name"></input>
             <label id= "email"><b>Email</b></label>
             <input id="email" type="email" value={email} onChange={handleOnChange} name = "email"></input>
-            <label id = "password"><b>Password</b></label>
+            <label id = "password"><b>Password</b><span class = "flex justify-around items-center" onClick={handleEye}>
+                <Icon class="absolute mr-10" icon={icon} size={25}/>
+            </span></label>
             <input type={type} id="pass1"name="password" value={password}
             onChange={handleOnChange}></input>
-            <span class = "flex justify-around items-center" onClick={handleEye}>
-                <Icon class="absolute mr-10" icon={icon} size={25}/>
-            </span>
-            <label id = "password"><b>Confirm Password</b></label>
+            <label id = "password"><b>Confirm Password</b><span class = "flex justify-around items-center" onClick={handleEye1}>
+                <Icon class="absolute mr-10" icon={icon1} size={25}/>
+            </span></label>
             <input type={type1} id="pass2" name="confirmPassword" value={password1}
             onChange={(e) => setPassword1(e.target.value)}></input>
-            <span class = "flex justify-around items-center" onClick={handleEye1}>
-                <Icon class="absolute mr-10" icon={icon1} size={25}/>
-            </span>
             <button type="submit" id="Loginbut1">Sign Up</button>
             <a href="/"><button type="button" id="Loginbut2">Home</button></a>
         </form>

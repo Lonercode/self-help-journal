@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+ 
   padding: 0rem;
   text-align: center;
 }
@@ -100,25 +100,24 @@
   position: absolute;
 }
 
-
-
 .loginForm, .registerForm {
-  border-radius: 5px;
+  border-radius: 2vw;
   background-color: #f2f2f2;
-  padding: 20px;
-  margin-top: 12vh;
-  width: 40%;
-  margin-left: 30%;
-  position: absolute;
+  padding: 2vw;
+  font-size: 2vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   
 }
+
 
 
 .loginForm [type=text], select, input[type=password], select, input[type=email], select, 
 .registerForm [type=text], select, input[type=password], select, input[type=email], select{
   width: 100%;
   padding: 15px 20px;
-  margin: 10px 0;
+  margin: 20px 0;
   display: block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -216,12 +215,20 @@ a {
 }
 
 .notHere{
-  margin:auto;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+
 }
 
-.notHere p {
-  margin: auto;
+.gallery{
+  display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
 }
+
 
 .gallery h3{
   margin-top: 0vh;
@@ -229,14 +236,7 @@ a {
   font-family: cursive;
 }
 
-.all{
-  position: relative;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
- 
- 
-}
+
 
 .theNav .footer{
   font-size: 1.3vw;
@@ -249,10 +249,8 @@ a {
 
 span{
   cursor: pointer;
-  position: absolute;
-  margin-top: -8vh;
-  color: white;
-  right:3vw;
+  color: black;
+  margin-left: 1vw;
 }
 
 #txtarea{
@@ -388,7 +386,7 @@ span{
 
   body {
     overflow-x: hidden;
-    margin: auto;
+    
   }
   .theNav {
     height: 8vh;
@@ -459,11 +457,13 @@ span{
 
 
   .loginForm, .registerForm {
-    border-radius: 2vw;
-    padding: 20px;
-    margin-top: 15vh;
+    
     width: 70%;
-    margin-left: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 6vh;
+    font-size: 2vw;
    
   }
 
@@ -472,9 +472,7 @@ span{
   }
   
   #Loginmeditate{
-    transform:scale(0.2);
-    margin-top: 10vh;
-    margin-left: -40vw;
+   display: none;
   }
   
   #Loginwork{
@@ -508,7 +506,7 @@ span{
   
   #Aboutflowers{
     transform:scale(0.5);
-    margin-top: -20vh;
+    margin-top: -15vh;
     margin-left: -90vw;
   }
 
@@ -525,10 +523,7 @@ span{
     margin-right: -15vw;
   }
 
-  span{
-    margin-top: -6vh;
-    right:7vw;
-  }
+  
 
   .entry p{
     width: 60vw;
@@ -588,13 +583,22 @@ span{
 
 
 .image-gallery-slide img{
-  width: 80vw;
-  height: 80vh;
+  width: 70vw;
+  height: 70vh;
  
 }
 
-.notHere p{
-  width: 40vw;
+.notHere{
+  width: 100%;
+  margin: auto;
+}
+
+.none {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 2vw;
+  
 }
 }
 
@@ -680,14 +684,16 @@ span{
 
 
   .loginForm, .registerForm {
-    border-radius: 2vw;
-    padding: 40px;
-    margin-top: 15vh;
+    
     width: 70%;
-    margin-left: 10%;
-    font-size: 4vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 6vh;
+   font-size: 2vw;
    
   }
+
 
   #Loginmusicguy{
    display: none;
@@ -698,19 +704,15 @@ span{
   }
   
   #Loginwork{
-    visibility: hidden;
+    display: none;
   }
   
   #Loginearth{
-    transform:scale(0.3);
-    margin-top: -18vh;
-    margin-left: -23vw;
+    display: none;
   }
   
   #Loginwrite{
-    transform:scale(0.3);
-    margin-top: 53vh;
-    margin-left: 33vw;
+    display: none;
   }
   
   #Loginmount{
@@ -730,7 +732,7 @@ span{
   
   #Aboutflowers{
     transform:scale(0.8);
-    margin-top: -10vh;
+    margin-top: -7vh;
     margin-left: -58vw;
   }
 
@@ -759,11 +761,6 @@ span{
     margin-right: -15vw;
   }
 
-  span{
-    margin-top: -6vh;
-    right:7vw;
-  }
-
 
   .entryDetails h3{
     font-size: 5vw;
@@ -789,9 +786,7 @@ span{
   }
 
   #leisure{
-    transform:scale(0.3);
-    margin-top: -10vh;
-    margin-left: -70vw;
+   display: none;
   }
   
   #tablet{
@@ -824,14 +819,6 @@ span{
     margin-right: 3vw;
     font-size: 2.9vw;
   }
-  
-  span{
-    cursor: pointer;
-    position: absolute;
-    margin-top: -6vh;
-    color: white;
-    right:6vw;
-  }
 
   
 
@@ -847,6 +834,9 @@ span{
   }
     
   
+  .notHere p {
+    font-size: 3vw;
+  }
 
 }
 
@@ -854,27 +844,65 @@ span{
 /* Smaller Desktops */
 
 @media (min-width: 1081px) and (max-width: 1440px){
+  body {
+    overflow-x: hidden;
+  }
+
+  .loginForm, .registerForm {
+    
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 6vh;
+   font-size: 1.5vw;
+   
+  }
+
   #Loginmusicguy{
     transform:scale(0.3);
-    margin-top: -20vh;
-    margin-left: -10vw;
+    margin-top: -90vh;
+    margin-left: -70vw;
     position: absolute;
   }
   
   #Loginmeditate{
     transform:scale(0.25);
-    margin-top: -20vh;
-    margin-left: 45vw;
+    margin-top: -60vh;
+    margin-left: -10vw;
     position:absolute;
   }
 
-  span{
-    cursor: pointer;
-    position: absolute;
-    margin-top: -6vh;
-    color: white;
-    right:3vw;
+  #Loginwork{
+    transform:scale(0.3);
+    margin-top: -90vh;
+    margin-left: 12vw;
+    position:absolute;
   }
+  
+  #Loginearth{
+    transform:scale(0.3);
+    margin-top: -90vh;
+    margin-left: -70vw;
+    position:absolute;
+  }
+  
+  #Loginwrite{
+    transform:scale(0.3);
+    margin-top: -60vh;
+    margin-left: -70vw;
+    position:absolute;
+  }
+  
+  
+  #Loginmount{
+    transform:scale(0.3);
+    margin-top: -60vh;
+    margin-left: 12vw;
+    position:absolute;
+  }
+
+  
 
   #Aboutbutterfly{
     transform:scale(0.3);
@@ -905,7 +933,6 @@ span{
 
   .gallery h3{
     font-size: 3vw;
-    margin-left: 10%;
   }
     
   #name {
@@ -914,22 +941,21 @@ span{
   }
 
   #leisure{
-    transform:scale(0.3);
-    margin-top: -120vh;
-    margin-left: -67vw;
-    position:absolute;
+    display: none;
   }
 
   #tablet{
     transform:scale(0.3);
-    margin-top: -100vh;
-    margin-left: 6vw;
+    margin-top: -50vh;
+    margin-left: 30vw;
     position:absolute;
   }
 
-  .notHere p {
-    font-size: 2vw;
-  }
+  
+ .notHere p{
+  font-size: 2vw;
+  text-align: center;
+ }
 
 }
 
@@ -939,70 +965,62 @@ span{
 
   body{
     overflow-x: hidden;
-    margin: auto;
   }
 
   .loginForm, .registerForm {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 3vw;
-    margin-top: 12vh;
-    width: 40%;
-    margin-left: 40%;
-    position: absolute;
-    font-size: 1.5vw;
     
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 6vh;
+   font-size: 1.5vw;
+   
   }
+
   
   
   #Loginmusicguy{
     transform:scale(0.4);
-    margin-top: -20vh;
-    margin-left: -10vw;
+    margin-top: -80vh;
+    margin-left: -63vw;
     position: absolute;
   }
   
   #Loginmeditate{
     transform:scale(0.35);
-    margin-top: -10vh;
-    margin-left: 53vw;
+    margin-top: -50vh;
+    margin-left: 6vw;
     position:absolute;
   }
 
-  span{
-    cursor: pointer;
-    position: absolute;
-    margin-top: -5vh;
-    color: white;
-    right:4vw;
-  }
 
   #Loginwork{
     transform:scale(0.3);
-    margin-top: -20vh;
-    margin-left: 53vw;
+    margin-top: -100vh;
+    margin-left: 18vw;
     position:absolute;
   }
   
   #Loginearth{
     transform:scale(0.3);
-    margin-top: -20vh;
-    margin-left: -5vw;
+    margin-top: -100vh;
+    margin-left: -65vw;
     position:absolute;
   }
   
   #Loginwrite{
     transform:scale(0.3);
-    margin-top: 24vh;
-    margin-left: 53vw;
+    margin-top: -60vh;
+    margin-left: -65vw;
     position:absolute;
   }
   
   
   #Loginmount{
     transform:scale(0.3);
-    margin-top: 19vh;
-    margin-left: -5vw;
+    margin-top: -60vh;
+    margin-left: 18vw;
     position:absolute;
   }
 
@@ -1026,24 +1044,15 @@ span{
    
   }
 
-  .image-gallery {
-    width: 100%;
-    height: auto;
-    margin: auto;
-    margin-left: 6vw;
-  }
-
   
   .image-gallery-slide img{
     width: 80vw;
     height: 80vh;
-    object-position: center center;
    
   }
 
   .gallery h3{
     font-size: 3vw;
-    margin-left: 30%;
   }
 
   #name {
@@ -1054,26 +1063,25 @@ span{
 
   #leisure{
     transform:scale(0.3);
-    margin-top: -120vh;
-    margin-left: -55vw;
+    margin-top: -40vh;
+    margin-left: -34vw;
     position:absolute;
   }
 
   #tablet{
     transform:scale(0.3);
-    margin-top: -100vh;
-    margin-left: 6vw;
+    margin-top: -40vh;
+    margin-left: 40vw;
     position:absolute;
   }
 
 
-  .notHere p {
-    font-size: 2vw;
-  }
+  
+ .notHere p{
+  font-size: 2vw;
+  text-align: center;
 
-  .notHere {
-    margin-left: 30%;
-  }
+ }
   
 }
 
@@ -1081,21 +1089,26 @@ span{
 /* Seriously Large Desktop Screens */
 
 @media (min-width: 2001px) and (max-width: 3000px){
+  body {
+    overflow-x: hidden;
+  }
+
   .theNav1 h2{
     font-size: 2.3vw;
   }
 
+  
   .loginForm, .registerForm {
-    border-radius: 2vw;
-    background-color: #f2f2f2;
-    padding: 2vw;
-    margin-top: 12vh;
-    width: 80%;
-    margin-left: 50%;
-    position: absolute;
-    font-size: 2vw;
     
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 6vh;
+   font-size: 1.5vw;
+   
   }
+ 
 
 .loginForm [type=text], select, input[type=password], select, input[type=email], select, 
 .registerForm [type=text], select, input[type=password], select, input[type=email], select{
@@ -1111,54 +1124,47 @@ span{
   
 #Loginmusicguy{
   transform:scale(0.55);
-  margin-top: -13vh;
-  margin-left: 0vw;
+  margin-top: -80vh;
+  margin-left: -55vw;
   position: absolute;
 }
 
 #Loginmeditate{
   transform:scale(0.45);
-  margin-top: 10vh;
-  margin-left: 66vw;
+  margin-top: -45vh;
+  margin-left: 12vw;
   position:absolute;
 }
 
-span{
-  cursor: pointer;
-  position: absolute;
-  margin-top: -12vh;
-  color: white;
-  right:3vw;
-}
-
 #Loginwork{
-  transform:scale(0.4);
-  margin-top: -10vh;
-  margin-left: 70vw;
+  transform:scale(0.3);
+  margin-top: -130vh;
+  margin-left: 20vw;
   position:absolute;
 }
 
 #Loginearth{
-  transform:scale(0.4);
-  margin-top: -10vh;
-  margin-left: -3vw;
+  transform:scale(0.3);
+  margin-top: -130vh;
+  margin-left: -50vw;
   position:absolute;
 }
 
 #Loginwrite{
-  transform:scale(0.4);
-  margin-top: 70vh;
-  margin-left: 70vw;
+  transform:scale(0.3);
+  margin-top: -60vh;
+  margin-left: -50vw;
   position:absolute;
 }
 
 
 #Loginmount{
-  transform:scale(0.4);
-  margin-top: 70vh;
-  margin-left: -3vw;
+  transform:scale(0.3);
+  margin-top: -60vh;
+  margin-left: 20vw;
   position:absolute;
 }
+
 
 .about{
   height:fit-content;
@@ -1173,12 +1179,7 @@ span{
   position:absolute;
 }
 
-.image-gallery {
-  width: 100%;
-  height: auto;
-  margin: auto;
-  margin-left: 30%;
-}
+
 
 
 .image-gallery-slide img{
@@ -1189,20 +1190,19 @@ span{
 
 .gallery h3{
   font-size: 3vw;
-  margin-left: 50%;
 }
 
 #leisure{
   transform:scale(0.3);
-  margin-top: -120vh;
-  margin-left: -50vw;
+  margin-top: -40vh;
+  margin-left: -30vw;
   position:absolute;
 }
 
 #tablet{
   transform:scale(0.3);
-  margin-top: -100vh;
-  margin-left: 12vw;
+  margin-top: -20vh;
+  margin-left: 50vw;
   position:absolute;
 }
 
@@ -1210,8 +1210,6 @@ span{
   font-size: 2vw;
 }
 
-.notHere {
-  margin-left: 40vw;
-}
+
   
 }
