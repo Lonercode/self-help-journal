@@ -58,7 +58,7 @@ const PageEntry = () => {
     <p>{entry.content}</p>
     <div id = "dashboardButtons">
     <a href= "/update"><button type = "button">Update Entry</button></a>
-    <a href= "/dashboard"><button type = "button">To Dashboard</button></a>
+    <a href= "/dashboard"><button type = "button">Dashboard</button></a>
    
     </div>
     </div>
