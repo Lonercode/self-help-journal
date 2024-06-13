@@ -393,7 +393,7 @@ span{
   }
 
   .theNav a{
-    font-size: 5vw;
+    font-size: 6vw;
   }
 
   .menu {
@@ -420,7 +420,7 @@ span{
   
   .theNav1 li{
     font-family:cursive;
-    font-size: 4.5vw;
+    font-size: 5vw;
   }
 
   .book{
@@ -432,26 +432,21 @@ span{
   }
 
   .theNav1 li a:hover{
-    font-size: 4.5vw;
+    font-size: 5.3vw;
   }
   
   .line{
-    visibility: hidden;
+    display: none
   }
   
   .pen{
-    z-index: 1;
-    position: absolute;
-    transform:scale(2);
-    width: 5vw;
-    margin-top: 26vh;
-    margin-left: 15vw;
+    display:none;
   }
   
   
 
   .theNav .footer{
-    font-size: 2vw;
+    font-size: 3vw;
   
   }
 
@@ -463,7 +458,7 @@ span{
     margin-right: auto;
     padding: 20px;
     margin-top: 6vh;
-    font-size: 3.5vw;
+    font-size: 4vw;
    
   }
 
