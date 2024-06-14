@@ -278,6 +278,7 @@ span{
   text-align: center;
   color: black;
   font-weight: bold;
+  font-size: 5vw;
   
 }
 
@@ -514,7 +515,7 @@ span{
   }
   
   #name {
-    font-size: 4vw;
+    font-size: 5vw;
     margin-right: -15vw;
   }
 
@@ -747,7 +748,7 @@ span{
   
   
   #name {
-    font-size: 4.3vw;
+    font-size: 5.5vw;
     margin-right: -15vw;
   }
 
@@ -926,7 +927,7 @@ span{
   }
     
   #name {
-    font-size: 3vw;
+    font-size: 5.5vw;
     margin-right: -15vw;
   }
 
@@ -1046,7 +1047,7 @@ span{
   }
 
   #name {
-    font-size: 3vw;
+    font-size: 5vw;
     margin-right: -40vw;
   }
 
