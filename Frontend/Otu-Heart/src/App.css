@@ -538,7 +538,7 @@ span{
   }
 
   .entryDetails button{
-    width: 25vw;
+    width:fit-content;
    
   }
   
@@ -770,7 +770,7 @@ span{
   }
 
   .entryDetails button{
-    width: 25vw;
+    width: fit-content;
    
   }
 
