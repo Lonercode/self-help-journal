@@ -538,9 +538,8 @@ span{
   }
 
   .entryDetails button{
-    width: 20vw;
-    height: 8vh;
-    font-size: 3.6vw;
+    width: 23vw;
+   
   }
   
   #dateTime {
@@ -749,7 +748,7 @@ span{
   
   #name {
     font-size: 5.5vw;
-    margin-right: -15vw;
+    margin-right: -10vw;
   }
 
 
@@ -928,7 +927,7 @@ span{
     
   #name {
     font-size: 5.5vw;
-    margin-right: -15vw;
+    margin-right: -10vw;
   }
 
   #leisure{
