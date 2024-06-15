@@ -1,5 +1,16 @@
+require('dotenv').config()
 const Entry = require('../models/entry.models')
 const user = require('../models/auth.models')
+const DataUri = require('datauri');
+const path = require('path')
+const dataUri = new DataUri();
+const cloudinary = require('cloudinary').v2
+
+cloudinary.config({ 
+    cloud_name: process.env.CLOUD_NAME, 
+    api_key: process.env.API_KEY, 
+    api_secret: process.env.SECRET_KEY
+  });
 
 
 const getEntries = async(req, res, next) => {
@@ -30,8 +41,11 @@ const getEntry = async(req, res, next) => {
 
 const createEntry = async(req, res, next) => {
     try{
-    const entry = await Entry.create({
-        image: req.file.path,
+        const image = req.file
+        image = dataUri.format(path.extname(image.originalname).toString(), image.buffer).content;
+        cloudinary.uploader.upload(image)
+        const entry = await Entry.create({
+        image: image,
         title: req.body.title,
         content: req.body.content,
         user: req.user

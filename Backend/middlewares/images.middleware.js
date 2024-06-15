@@ -1,15 +1,10 @@
 const multer = require('multer')
+const DataUri = require('datauri');
 const path = require('path')
+const dataUri = new DataUri();
 
-const storage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, 'uploads')
-    },
-    filename: function(req, file, cb){
-        cb(null, file.originalname)
-    }
-});
 
-const uploads = multer({storage})
+
+const uploads = multer()
 
 module.exports = uploads
