@@ -78,13 +78,12 @@ function ResetPassword(){
             <h3>Type in Your new password &#128522;</h3>
             <ToastContainer className='toasty'/>
         <form method="post" onSubmit={handleSubmit}>
-            <label id= "resetPassword"><b>Password</b></label>
+            <label id= "resetPassword"><b>Password</b><span class = "flex justify-around items-center" onClick={handleEye}>
+                <Icon class="absolute mr-10" icon={icon} size={25}/>
+            </span></label>
             <input type={type} id="resetPassword" name="password" value={password}
             onChange={handleOnChange}></input>
-            <span class = "flex justify-around items-center" onClick={handleEye}>
-                <Icon class="absolute mr-10" icon={icon} size={25}/>
-            </span>
-           
+            
             <button type="submit" id="Loginbut1">Reset Password</button>
         
         </form>
