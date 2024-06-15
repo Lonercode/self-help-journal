@@ -22,7 +22,7 @@ function UpdateEntry(){
     const navigate = useNavigate()
     const [created, setCreated] = useState({title: title1, content: content1});
     const {title, content} = created;
-    const img =  `http://localhost:3600/${image1}`
+    const img =  `/api/${image1}`
     const [image, setImage] = useState({image: img});
 
  
@@ -77,7 +77,7 @@ function UpdateEntry(){
             }
             else{
 
-            axios.put(`http://localhost:3600/otu-heart/updateEntry?_id=${id}`,formData,
+            axios.put(`/api/otu-heart/updateEntry?_id=${id}`,formData,
             config,
             {withCredentials: true}
             )
