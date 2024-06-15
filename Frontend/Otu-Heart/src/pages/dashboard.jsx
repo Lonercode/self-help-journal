@@ -25,7 +25,7 @@ const UserEntries = () => {
   
   let val = entries.map((item) => {
     const dateTime =  dateFormat(`${item.date}`, "mmmm dS, yyyy")
-    const imageLink = item.image
+    const imageLink = `/api/${item.image}`
     cookies.set('id', item._id, {
       path: '/entryPage'
     })
