@@ -43,9 +43,9 @@ const createEntry = async(req, res, next) => {
     try{
         const image = req.file
         image = dataUri.format(path.extname(image.originalname).toString(), image.buffer).content;
-        cloudinary.uploader.upload(image)
+        const result = cloudinary.uploader.upload(image)
         const entry = await Entry.create({
-        image: image,
+        image: await result.secure_url,
         title: req.body.title,
         content: req.body.content,
         user: req.user
