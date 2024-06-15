@@ -12,11 +12,7 @@ cloudinary.config({
     api_secret: process.env.SECRET_KEY
   });
 
-const getImageUrl = (image) => {
-    image = dataUri.format(path.extname(image.originalname).toString(), image.buffer).content;
-    const result = cloudinary.uploader.upload(image)
-    return result
-}
+
 
 const getEntries = async(req, res, next) => {
     try{
@@ -47,9 +43,10 @@ const getEntry = async(req, res, next) => {
 const createEntry = async(req, res, next) => {
     try{
         const image = req.file
-        const img = getImageUrl(image)
+        image = dataUri.format(path.extname(image.originalname).toString(), image.buffer).content;
+        const result = cloudinary.uploader.upload(image)
         const entry = await Entry.create({
-        image: await img.secure_url,
+        image: await result.secure_url,
         title: req.body.title,
         content: req.body.content,
         user: req.user
@@ -65,12 +62,13 @@ const updateEntry = async(req, res, next) => {
     try{
     const entry = await Entry.findOne({_id: req.query._id, user: req.user})
     const image = req.file
-    const img = getImageUrl(image)
+    image = dataUri.format(path.extname(image.originalname).toString(), image.buffer).content;
+    const result = cloudinary.uploader.upload(image)
     if (entry){
     await Entry.findOneAndUpdate(
         {_id: req.query._id},
         {$set: 
-        {image: await img.secure_url,
+        {image: await result.secure_url,
         title: req.body.title,
         content: req.body.content
         },
