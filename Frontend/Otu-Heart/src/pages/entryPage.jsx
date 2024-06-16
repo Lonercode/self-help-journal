@@ -48,7 +48,7 @@ const PageEntry = () => {
 
 
   const dateTime =  dateFormat(entry.date, "mmmm dS, yyyy")
-  const imageLink = `/api/${entry.image}`
+  const imageLink = entry.image
   return (
     <>
     <div className="entryDetails">
