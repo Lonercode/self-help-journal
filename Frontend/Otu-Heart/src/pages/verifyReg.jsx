@@ -51,9 +51,10 @@ function VerifyRegistration(){
 
     return (
         <>
+        <div className='welcometoApp'>
         <ToastContainer className="toasty"/>
 
-        <p id ="welcometoApp"><b>Welcome to your new self-help journal! You can login using the button below;</b></p>
+        <p><b>Welcome to your new self-help journal! You can login using the button below;</b></p>
         <button type ='button' id="confirmRegButton" onClick={handleSubmit}> Take me to my Journal </button>
         
 	    <Lottie className='lottie'
@@ -62,6 +63,7 @@ function VerifyRegistration(){
       play
       style={{ width: 400, height: 400 }}
     />
+    </div>
       
         </>
     )

@@ -379,8 +379,11 @@ span{
   margin: auto;
 }
 
-#welcometoApp{
-  margin:auto;
+.welcometoApp{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
 }
 
 
