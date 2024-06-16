@@ -1,7 +1,5 @@
 const multer = require('multer')
 
-const storage = multer.memoryStorage() 
-
-const uploads = multer({ storage: storage })
+const uploads = multer({ dest: 'uploads' })
 
 module.exports = uploads
