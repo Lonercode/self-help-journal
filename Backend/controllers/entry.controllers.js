@@ -45,7 +45,14 @@ const createEntry = async(req, res, next) => {
         const image = req.files
         console.log(image)
         image = dataUri.format(path.extname(image.originalname).toString(), image.buffer).content;
-        const result = await cloudinary.uploader.upload(image)
+        const result = await cloudinary.uploader.upload(image, function (err, result){
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(result);
+            }
+        });
+        
         const entry = await Entry.create({
         image: await result.secure_url,
         title: req.body.title,
