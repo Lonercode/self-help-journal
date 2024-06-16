@@ -219,6 +219,7 @@ a {
  justify-content: center;
  align-items: center;
  flex-direction: column;
+ width: fit-content;
 
 }
 
@@ -381,6 +382,7 @@ span{
  justify-content: center;
  align-items: center;
  flex-direction: column;
+ width: fit-content;
 }
 
 
