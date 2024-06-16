@@ -380,11 +380,7 @@ span{
 }
 
 .welcometoApp{
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- background-color: aqua;
+ padding: 4vw;
 }
 
 
