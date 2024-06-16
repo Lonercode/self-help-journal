@@ -6,6 +6,12 @@ const path = require('path')
 const dataUri = new DataUri();
 const cloudinary = require('cloudinary').v2
 
+cloudinary.config({ 
+    cloud_name: process.env.CLOUD_NAME, 
+    api_key: process.env.API_KEY, 
+    api_secret: process.env.SECRET_KEY
+  });
+
 
 
 const getEntries = async(req, res, next) => {
@@ -38,17 +44,12 @@ const createEntry = async(req, res, next) => {
     try{
         const image = req.file
         console.log(image)
-        image = dataUri.format(path.extname(image.originalname).toString(), image.buffer).content;
-        const result = await cloudinary.uploader.upload(image, function (err, result){
-            if (err) {
-              console.log(err);
-            } else {
-              console.log(result);
-            }
+        const result = await cloudinary.uploader.upload(image.path, {
+            folder: 'uploads'
         });
 
         const entry = await Entry.create({
-        image: await result.secure_url,
+        image: result.secure_url,
         title: req.body.title,
         content: req.body.content,
         user: req.user
@@ -64,13 +65,15 @@ const updateEntry = async(req, res, next) => {
     try{
     const entry = await Entry.findOne({_id: req.query._id, user: req.user})
     const image = req.file
-    image = dataUri.format(path.extname(image.originalname).toString(), image.buffer).content;
-    const result = cloudinary.uploader.upload(image)
+    const result = await cloudinary.uploader.upload(image.path, {
+        folder: 'uploads'
+    });
+
     if (entry){
     await Entry.findOneAndUpdate(
         {_id: req.query._id},
         {$set: 
-        {image: await result.secure_url,
+        {image: result.secure_url,
         title: req.body.title,
         content: req.body.content
         },
