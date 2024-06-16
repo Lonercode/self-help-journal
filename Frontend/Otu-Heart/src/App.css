@@ -219,8 +219,11 @@ a {
  justify-content: center;
  align-items: center;
  flex-direction: column;
- width: fit-content;
 
+}
+
+.notHere p {
+  width:fit-content;
 }
 
 .gallery{
