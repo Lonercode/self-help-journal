@@ -43,6 +43,7 @@ const getEntry = async(req, res, next) => {
 const createEntry = async(req, res, next) => {
     try{
         const image = req.file
+        console.log(image)
         image = dataUri.format(path.extname(image.originalname).toString(), image.buffer).content;
         const result = cloudinary.uploader.upload(image)
         const entry = await Entry.create({
