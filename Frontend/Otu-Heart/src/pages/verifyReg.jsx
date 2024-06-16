@@ -53,7 +53,7 @@ function VerifyRegistration(){
         <>
         <ToastContainer className="toasty"/>
 
-        <p><b>Welcome to your new self-help journal! You can login using the button below;</b></p>
+        <p id ="welcometoApp"><b>Welcome to your new self-help journal! You can login using the button below;</b></p>
         <button type ='button' id="confirmRegButton" onClick={handleSubmit}> Take me to my Journal </button>
         
 	    <Lottie className='lottie'
