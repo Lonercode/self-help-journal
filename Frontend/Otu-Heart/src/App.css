@@ -604,7 +604,7 @@ span{
   text-align: center;
   color: black;
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 3vw;
   
 }
 
@@ -841,6 +841,15 @@ span{
     font-size: 3vw;
   }
 
+  .none {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 3vw;
+    
+  }
+  
+
 }
 
 
@@ -959,6 +968,15 @@ span{
   font-size: 2vw;
   text-align: center;
  }
+
+ .none {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 3vw;
+  
+}
+
 
 }
 
@@ -1085,6 +1103,15 @@ span{
   text-align: center;
 
  }
+
+ .none {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 3vw;
+  
+}
+
   
 }
 
@@ -1212,6 +1239,15 @@ span{
 .notHere p {
   font-size: 2vw;
 }
+
+.none {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 3vw;
+  
+}
+
 
 
   
