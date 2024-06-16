@@ -23,7 +23,7 @@ function Home(){
     </div>
     <div className = "theNav1">
     <h2>My Menu</h2>
-    <li><a href = "/about">About</a></li>
+    <li><a href = "/about">About The App</a></li>
     <li><a href = "/affirmations">Affirmation Cards</a></li>
     <li><a className = "active" href = "/login">Login or Register</a></li>
   </div>
