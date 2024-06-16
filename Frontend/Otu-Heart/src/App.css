@@ -371,7 +371,7 @@ span{
 }
 
 #confirmRegButton{
-  width: 12vw;
+  width: fit-content;
   margin: auto;
 }
 
@@ -595,6 +595,8 @@ span{
   font-size: 2vw;
   
 }
+
+
 }
 
 /* Tablets */ 
