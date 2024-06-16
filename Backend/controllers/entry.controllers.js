@@ -1,9 +1,8 @@
 require('dotenv').config()
 const Entry = require('../models/entry.models')
 const user = require('../models/auth.models')
-const DataUri = require('datauri');
 const path = require('path')
-const dataUri = new DataUri();
+
 const cloudinary = require('cloudinary').v2
 
 cloudinary.config({ 
