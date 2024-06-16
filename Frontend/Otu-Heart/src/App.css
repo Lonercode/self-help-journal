@@ -385,7 +385,10 @@ span{
  justify-content: center;
  align-items: center;
  flex-direction: column;
- width: fit-content;
+}
+
+.welcometoApp p{
+  width: 70vw;
 }
 
 
