@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
-const id = cookies.get('id')
+const id = cookies.get('entryId')
 import dateFormat from 'dateformat'
 
 
