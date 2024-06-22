@@ -48,7 +48,7 @@ function App() {
   const history = useHistory()
   
   const tokenExpired = () => {
-  const theToken = localStorage.getItem('loginToken')
+  const theToken = token
   if (!theToken){
   history.push('/login')
   return;
@@ -58,7 +58,7 @@ function App() {
     const decoded = jwtDecode(theToken)
     const currTime = Date.now() / 1000;
     if (decoded.exp < currTime){
-      localStorage.removeItem('loginToken')
+      cookies.remove(token)
       history.push('/login')
     }
   } catch(err){
