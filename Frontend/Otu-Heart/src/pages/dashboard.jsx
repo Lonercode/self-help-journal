@@ -16,15 +16,6 @@ const config = {
 const UserEntries = () => {
   const [entries, setEntries] = useState([]);
 
-const handleId = (id) => {
-  cookies.set('entryId', id, {
-    path: '/entryPage'
-  })
-  setTimeout(() => {
-    navigate("/entryPage");
-     
-  }, 2000)
-}
     axios.get('/api/otu-heart/myEntries', config)
     .then((res) => setEntries(res.data.message))
   
@@ -81,6 +72,16 @@ function Dashboard(){
       cookies.remove('loginToken')
       navigate('/')
     
+  }
+
+  const handleId = (id) => {
+    cookies.set('entryId', id, {
+      path: '/entryPage'
+    })
+    setTimeout(() => {
+      navigate("/entryPage");
+       
+    }, 2000)
   }
   
     return (
