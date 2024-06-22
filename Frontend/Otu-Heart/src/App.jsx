@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Home from './pages/home'
 import './App.css'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -21,7 +21,8 @@ import jwtDecode from 'jwt-decode'
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+i
 
 
 
@@ -40,29 +41,35 @@ function Nav() {
 }
 
 
-const tokenExpired = (thetoken) => {
-  if (!thetoken){
-    return true
-  }
-  try{
-    const decodedToken = jwtDecode(thetoken)
-    const presentTime = Date.now() / 1000
-    return decodedToken.exp < presentTime
-  }catch(err){
-    console.log(err)
-    return true
-  }
-}
 
 
 function App() {
   
-  const navigate = useNavigate()
-  if(tokenExpired(token)){
-    cookies.remove(token)
-    navigate('/login')
-  }
+  const history = useHistory()
   
+  const tokenExpired = () => {
+  const theToken = token
+  if (!theToken){
+  history.push('/login')
+  return;
+  }
+  }
+  try{
+    const decoded = jwtDecode(theToken)
+    const currTime = Date.now() / 1000;
+    if (decoded.exp < currTime){
+      cookies.remove(theToken)
+      history.push('/login')
+    }
+  } catch(err){
+    console.log(err)
+    history.push('/login')
+  }
+
+  useEffect(() => {
+    tokenExpired()
+  }, []);
+
   return (
     <>
     <Nav/>
