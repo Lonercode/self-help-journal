@@ -22,7 +22,6 @@ function UpdateEntry(){
     const navigate = useNavigate()
     const [created, setCreated] = useState({title: title1, content: content1});
     const {title, content} = created;
-    const [image, setImage] = useState(image1);
 
  
 
@@ -45,9 +44,6 @@ function UpdateEntry(){
     }, 2000)
     }
 
-    const handleFileChange = (e) => {
-        setImage(e.target.files[0])
-      }
     
 
     const handleSuccess = async (msg) => {
@@ -63,7 +59,7 @@ function UpdateEntry(){
         function handleSubmit(e){
             e.preventDefault()
             const formData = new FormData();
-            formData.append('image', image)
+        
             formData.append('title', title)
             formData.append('content', content)
             
@@ -107,8 +103,6 @@ function UpdateEntry(){
         <h3>New Entry</h3>
         <ToastContainer className="toasty"/>
         <form method="post" onSubmit={handleSubmit}>
-            <label for= "file"><b>Image</b></label><br/>
-            <input id="image" type="file" accept="image/*" style={{cursor:'pointer'}} onChange={handleFileChange} name = 'image' ></input><br/><br/>
 
             <label id= "title"><b>Title</b></label>
             <input id="title" type="text" value={title} onChange={handleOnChange} name = 'title'></input><br/>

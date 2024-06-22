@@ -64,17 +64,13 @@ const createEntry = async(req, res, next) => {
 const updateEntry = async(req, res, next) => {
     try{
     const entry = await Entry.findOne({_id: req.query._id, user: req.user})
-    const image = req.file
-    const result = await cloudinary.uploader.upload(image.path, {
-        folder: 'uploads'
-    });
+   
 
     if (entry){
     await Entry.findOneAndUpdate(
         {_id: req.query._id},
         {$set: 
-        {imagePublicUrl: result.public_id,
-        image: result.secure_url,
+        {
         title: req.body.title,
         content: req.body.content
         },
