@@ -384,6 +384,10 @@ span{
   width: 70vw;
 }
 
+#dashboardButtons{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 /*Mobiles*/

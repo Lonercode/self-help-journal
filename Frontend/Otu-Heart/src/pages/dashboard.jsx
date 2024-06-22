@@ -81,7 +81,7 @@ function Dashboard(){
         <p id = "name"><b>&#128516; Hello {name},</b></p>
         <UserEntries/>
         <div id = "dashboardButtons">
-       <a href= "/create"><button type = "button" id = "dashbutton">Create</button></a><br/>
+       <a href= "/create"><button type = "button" id = "dashbutton">Create</button></a>
         <button type = "button" onClick={logout} id = "dashbutton">Logout</button>
         </div>
         </>
