@@ -28,6 +28,6 @@ router.get("/myEntries", protect, getEntries)
 router.post("/createEntry", protect, uploads.single('image'), createEntry)
 router.put("/updateEntry", protect, uploads.single('image'), updateEntry)
 router.delete("/deleteEntry", protect, deleteEntry)
-router.get("/myEntry/:_id", protect, getEntry)
+router.get("/myEntry", protect, getEntry)
 
 module.exports = router
