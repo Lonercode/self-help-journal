@@ -13,7 +13,7 @@ const config = {
   headers: {Authorization: `Bearer ${token}`}
 }
 
-
+const navigate = useNavigate();
 const UserEntries = () => {
   const [entries, setEntries] = useState([]);
 
@@ -21,6 +21,7 @@ const handleId = (id) => {
   cookies.set('entryId', id, {
     path: '/entryPage'
   })
+  navigate("/entryPage")
 }
     axios.get('/api/otu-heart/myEntries', config)
     .then((res) => setEntries(res.data.message))
@@ -37,7 +38,7 @@ const handleId = (id) => {
     <h3>{item.title}</h3>
     <p id ="dateTime">{dateTime}</p><br/>
     <p>{item.content.substring(0, 100)}...</p>
-    <a href = "/entryPage" onClick={handleId(item._id)}>Read my thoughts</a>
+    <button onClick={handleId(item._id)}>Read my thoughts</button>
     </div>
     </>)
   })
