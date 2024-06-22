@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
-const id = cookies.get('entryId')
 import dateFormat from 'dateformat'
 
 
@@ -16,6 +15,7 @@ const config = {
 
 
 const PageEntry = () => {
+  const id = useParams()
   const navigate = useNavigate();
   const [entry, setEntry] = useState([]);
   

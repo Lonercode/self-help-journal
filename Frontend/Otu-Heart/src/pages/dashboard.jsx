@@ -17,11 +17,7 @@ const config = {
 const UserEntries = () => {
   const [entries, setEntries] = useState([]);
 
-const handleId = (id) => {
-  cookies.set('entryId', id, {
-    path: '/entryPage'
-  })
-}
+
     axios.get('/api/otu-heart/myEntries', config)
     .then((res) => setEntries(res.data.message))
   
@@ -37,7 +33,7 @@ const handleId = (id) => {
     <h3>{item.title}</h3>
     <p id ="dateTime">{dateTime}</p><br/>
     <p>{item.content.substring(0, 100)}...</p>
-    <Link to="/entryPage" onClick={handleId(item._id)}>Read my thoughts</Link>
+    <Link to={`/entryPage/${item_id}`}>Read my thoughts</Link>
     </div>
     </>)
   })
