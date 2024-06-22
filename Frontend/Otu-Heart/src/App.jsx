@@ -70,8 +70,8 @@ function App() {
       cookies.remove(name)
       history.push('/login')
     }
-  }, [history]);
-
+  
+else{
   return (
     <>
     <Nav/>
@@ -97,10 +97,9 @@ function App() {
     </Routes>
     </BrowserRouter>
 
-    
-  
    </>
-    )
+    )}
+  },[history])
 }
 
 export default App
