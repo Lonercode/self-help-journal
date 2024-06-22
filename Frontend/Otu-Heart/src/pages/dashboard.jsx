@@ -12,56 +12,6 @@ import dateFormat from 'dateformat'
 const config = {
   headers: {Authorization: `Bearer ${token}`}
 }
-
-const UserEntries = () => {
-  const [entries, setEntries] = useState([]);
-
-    axios.get('/api/otu-heart/myEntries', config)
-    .then((res) => setEntries(res.data.message))
-  
-  
-  
-  let val = entries.map((item) => {
-    const dateTime =  dateFormat(`${item.date}`, "mmmm dS, yyyy")
-    const imageLink = item.image
-   
-    return (<>
-    <div className = "entry" key={item._id}>
-    <img src={imageLink}/>
-    <h3>{item.title}</h3>
-    <p id ="dateTime">{dateTime}</p><br/>
-    <p>{item.content.substring(0, 100)}...</p>
-    <button onClick={handleId(item._id)}>Read my thoughts</button>
-    </div>
-    </>)
-  })
-
-  
-
-  if (val.length != 0){
-    return (
-        <>
-        <div className='stuff'>
-                {val}
-        </div>
-        </>
-    )
-  }
-
-  else{
-   
-    return (
-      <>
-      <div className='none'>
-              <p>You have no entries listed. Please create a new entry.</p>
-      </div>
-      </>
-  )
-}
-}
-
-
-
   
 
 function Dashboard(){
@@ -74,6 +24,9 @@ function Dashboard(){
     
   }
 
+  const UserEntries = () => {
+    const [entries, setEntries] = useState([]);
+  
   const handleId = (id) => {
     cookies.set('entryId', id, {
       path: '/entryPage'
@@ -83,6 +36,51 @@ function Dashboard(){
        
     }, 2000)
   }
+      axios.get('/api/otu-heart/myEntries', config)
+      .then((res) => setEntries(res.data.message))
+    
+    
+    
+    let val = entries.map((item) => {
+      const dateTime =  dateFormat(`${item.date}`, "mmmm dS, yyyy")
+      const imageLink = item.image
+     
+      return (<>
+      <div className = "entry" key={item._id}>
+      <img src={imageLink}/>
+      <h3>{item.title}</h3>
+      <p id ="dateTime">{dateTime}</p><br/>
+      <p>{item.content.substring(0, 100)}...</p>
+      <button onClick={handleId(item._id)}>Read my thoughts</button>
+      </div>
+      </>)
+    })
+  
+    
+  
+    if (val.length != 0){
+      return (
+          <>
+          <div className='stuff'>
+                  {val}
+          </div>
+          </>
+      )
+    }
+  
+    else{
+     
+      return (
+        <>
+        <div className='none'>
+                <p>You have no entries listed. Please create a new entry.</p>
+        </div>
+        </>
+    )
+  }
+  }
+  
+  
   
     return (
         <>
