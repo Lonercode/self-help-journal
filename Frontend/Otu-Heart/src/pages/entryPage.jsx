@@ -16,15 +16,12 @@ const config = {
 
 const PageEntry = () => {
   const ids = useParams()
-  const id = String(ids)
-  console.log(id)
-  console.log(ids)
   const navigate = useNavigate();
   const [entry, setEntry] = useState([]);
   
 
     
-  axios.get(`/api/otu-heart/myEntry?_id=${id}`, config)
+  axios.get(`/api/otu-heart/myEntry?_id=${ids.id}`, config)
   .then((res) => setEntry(res.data.message))
   setTimeout(() => {
     cookies.set('id', entry._id, {
