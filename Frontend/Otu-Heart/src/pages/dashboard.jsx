@@ -17,10 +17,9 @@ const config = {
 const UserEntries = () => {
   const [entries, setEntries] = useState([]);
 
-
+  
     axios.get('/api/otu-heart/myEntries', config)
     .then((res) => setEntries(res.data.message))
-  
   
   
   let val = entries.map((item) => {

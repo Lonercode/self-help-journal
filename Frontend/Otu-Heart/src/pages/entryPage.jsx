@@ -7,8 +7,6 @@ const token = cookies.get('loginToken')
 import dateFormat from 'dateformat'
 
 
-
-
 const config = {
   headers: {Authorization: `Bearer ${token}`}
 }

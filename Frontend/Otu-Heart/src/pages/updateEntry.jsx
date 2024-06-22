@@ -7,7 +7,6 @@ const token = cookies.get('loginToken')
 const id = cookies.get('id')
 const title1 = cookies.get('title')
 const content1 = cookies.get('content')
-const image1 = cookies.get('image')
 import {ToastContainer, toast} from 'react-toastify';
 
 

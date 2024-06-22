@@ -17,6 +17,11 @@ import UpdateEntry from './pages/updateEntry'
 import VerifyRegistration from './pages/verifyReg'
 import Test from './pages/test'
 import NotFound from './pages/notFound'
+import jwtDecode from 'jwt-decode'
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+const token = cookies.get('loginToken')
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -35,11 +40,29 @@ function Nav() {
 }
 
 
+const tokenExpired = (thetoken) => {
+  if (!thetoken){
+    return true
+  }
+  try{
+    const decodedToken = jwtDecode(thetoken)
+    const presentTime = Date.now() / 1000
+    return decodedToken.exp < presentTime
+  }catch(err){
+    console.log(err)
+    return true
+  }
+}
 
 
 function App() {
   
-
+  const navigate = useNavigate()
+  if(tokenExpired(token)){
+    cookies.remove(token)
+    navigate('/login')
+  }
+  
   return (
     <>
     <Nav/>
