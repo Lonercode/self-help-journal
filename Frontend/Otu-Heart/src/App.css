@@ -520,7 +520,7 @@ span{
 
   .entry {
     
-    width: 70%;
+    width: 90%;
     border-radius: 2vw;
     margin: auto;
     margin-bottom: 3vh;
@@ -982,8 +982,8 @@ span{
   width: 70%;
   border-radius: 2vw;
   margin: auto;
-  margin-bottom: 3vh;
-  font-size: 4vw;
+  margin-bottom: 0vh;
+  font-size: 2vw;
 }
 
 
