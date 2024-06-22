@@ -25,9 +25,9 @@ router.post("/resetPassword", protect, resetPassword)
 //Entry routes for authorized users
 
 router.get("/myEntries", protect, getEntries)
+router.get("/myEntry", protect, getEntry)
 router.post("/createEntry", protect, uploads.single('image'), createEntry)
 router.put("/updateEntry", protect, uploads.single('image'), updateEntry)
 router.delete("/deleteEntry", protect, deleteEntry)
-router.get("/myEntry", protect, getEntry)
 
 module.exports = router
