@@ -21,6 +21,7 @@ import jwtDecode from 'jwt-decode'
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
+const name = cookies.get('name')
 import { useHistory } from 'react-router-dom';
 i
 
@@ -58,7 +59,8 @@ function App() {
     const decoded = jwtDecode(theToken)
     const currTime = Date.now() / 1000;
     if (decoded.exp < currTime){
-      cookies.remove(token)
+      cookies.remove(token, {path: '/'})
+      cookies.remove(name, {path: '/'})
       history.push('/login')
     }
   } catch(err){
