@@ -48,30 +48,29 @@ function App() {
   
   const history = useHistory()
   
-  const tokenExpired = () => {
+  const tokenExpired = (token) => {
   if (!token){
-  window.location.href ='/login';
-  return;
+  return true;
   
   }
   try{
   
     const decoded = jwtDecode(token)
     const currTime = Date.now() / 1000;
-    if (decoded.exp < currTime){
-      cookies.remove(token)
-      cookies.remove(name)
-      window.location.href = '/login';
-    }
+    return decoded.exp < currTime
   } catch(err){
-    console.log(err)
-    window.location.href = '/login';
+    console.error(err)
+    return true;
   }
 }
 
   useEffect(() => {
-    tokenExpired()
-  }, []);
+    if(tokenExpired(token)){
+      cookies.remove(token)
+      cookies.remove(name)
+      history.push('/login')
+    }
+  }, [history]);
 
   return (
     <>
