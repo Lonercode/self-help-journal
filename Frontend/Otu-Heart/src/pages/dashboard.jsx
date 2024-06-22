@@ -28,10 +28,10 @@ function Dashboard(){
     cookies.set('entryId', id, {
       path: '/entryPage'
     })
-    setTimeout(() => {
+    
       navigate("/entryPage");
        
-    }, 2000)
+  
   }
 
   const UserEntries = () => {
@@ -53,7 +53,7 @@ function Dashboard(){
       <h3>{item.title}</h3>
       <p id ="dateTime">{dateTime}</p><br/>
       <p>{item.content.substring(0, 100)}...</p>
-      <button onClick={handleId(item._id)}>Read my thoughts</button>
+      <button type = "button" onClick={handleId(item._id)}>Read my thoughts</button>
       </div>
       </>)
     })
