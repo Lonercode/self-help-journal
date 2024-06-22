@@ -17,7 +17,11 @@ const config = {
 const UserEntries = () => {
   const [entries, setEntries] = useState([]);
 
-
+const handleId = (id) => {
+  cookies.set('entryId', id, {
+    path: '/entryPage'
+  })
+}
     axios.get('/api/otu-heart/myEntries', config)
     .then((res) => setEntries(res.data.message))
   
@@ -26,16 +30,14 @@ const UserEntries = () => {
   let val = entries.map((item) => {
     const dateTime =  dateFormat(`${item.date}`, "mmmm dS, yyyy")
     const imageLink = item.image
-    cookies.set('entryId', item._id, {
-      path: '/entryPage'
-    })
+   
     return (<>
-    <div className = "entry">
+    <div className = "entry" key={item._id}>
     <img src={imageLink}/>
     <h3>{item.title}</h3>
     <p id ="dateTime">{dateTime}</p><br/>
     <p>{item.content.substring(0, 100)}...</p>
-    <a href = "/entryPage">Read my thoughts</a>
+    <a href = "/entryPage" onClick={handleId(item._id)}>Read my thoughts</a>
     </div>
     </>)
   })
