@@ -30,7 +30,7 @@ const handleId = (id) => {
   let val = entries.map((item) => {
     const dateTime =  dateFormat(`${item.date}`, "mmmm dS, yyyy")
     const imageLink = item.image
-   
+    console.log(item._id)
     return (<>
     <div className = "entry">
     <img src={imageLink}/>
