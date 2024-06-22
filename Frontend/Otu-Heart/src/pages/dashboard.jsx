@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
-import { useNavigate} from "react-router-dom"
+import { useNavigate, Link} from "react-router-dom"
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
@@ -37,7 +37,7 @@ const handleId = (id) => {
     <h3>{item.title}</h3>
     <p id ="dateTime">{dateTime}</p><br/>
     <p>{item.content.substring(0, 100)}...</p>
-    <button type="button" onClick={handleId(item._id)}>Read my thoughts</button>
+    <Link to="/entryPage" onClick={handleId(item._id)}>Read my thoughts</Link>
     </div>
     </>)
   })
