@@ -1,7 +1,6 @@
 require('dotenv').config()
 const Entry = require('../models/entry.models')
 const user = require('../models/auth.models')
-const path = require('path')
 
 const cloudinary = require('cloudinary').v2
 
