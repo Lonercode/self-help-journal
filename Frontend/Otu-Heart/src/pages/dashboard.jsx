@@ -33,7 +33,7 @@ const UserEntries = () => {
     <h3>{item.title}</h3>
     <p id ="dateTime">{dateTime}</p><br/>
     <p>{item.content.substring(0, 100)}...</p>
-    <Link to={`/entryPage/${item_id}`}>Read my thoughts</Link>
+    <Link to={`/entryPage/${item._id}`}>Read my thoughts</Link>
     </div>
     </>)
   })
