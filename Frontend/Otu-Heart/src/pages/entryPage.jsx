@@ -39,10 +39,6 @@ const PageEntry = () => {
     path: '/update'
   })
 
-  cookies.set('image', entry.imagePublicUrl, {
-    path: '/update'
-  })
-
 
 
 
