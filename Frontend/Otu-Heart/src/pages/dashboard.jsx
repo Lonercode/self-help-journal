@@ -32,12 +32,12 @@ const handleId = (id) => {
     const imageLink = item.image
    
     return (<>
-    <div className = "entry" key={item._id}>
+    <div className = "entry">
     <img src={imageLink}/>
     <h3>{item.title}</h3>
     <p id ="dateTime">{dateTime}</p><br/>
     <p>{item.content.substring(0, 100)}...</p>
-    <Link to="/entryPage" onClick={handleId(item._id)}>Read my thoughts</Link>
+    <Link to="/entryPage" onClick={handleId(item._id.trim())}>Read my thoughts</Link>
     </div>
     </>)
   })
