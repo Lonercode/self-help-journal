@@ -39,7 +39,7 @@ const PageEntry = () => {
     path: '/update'
   })
 
-  cookies.set('image', entry.image, {
+  cookies.set('image', entry.imagePublicUrl, {
     path: '/update'
   })
 

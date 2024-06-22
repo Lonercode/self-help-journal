@@ -48,6 +48,7 @@ const createEntry = async(req, res, next) => {
         });
 
         const entry = await Entry.create({
+        imagePublicUrl: result.public_id,
         image: result.secure_url,
         title: req.body.title,
         content: req.body.content,
@@ -72,7 +73,8 @@ const updateEntry = async(req, res, next) => {
     await Entry.findOneAndUpdate(
         {_id: req.query._id},
         {$set: 
-        {image: result.secure_url,
+        {imagePublicUrl: result.public_id,
+        image: result.secure_url,
         title: req.body.title,
         content: req.body.content
         },

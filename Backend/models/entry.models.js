@@ -5,7 +5,11 @@ const auth = require('../models/auth.models')
 
 const entryModel = new entrySchema({
 
-    
+    imagePublicUrl: {
+        type: String,
+        required: false
+    },
+
     image: {
         type: String,
         required: true
