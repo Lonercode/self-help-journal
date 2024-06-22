@@ -71,6 +71,7 @@ function Dashboard(){
   
   const logout = () => {
       cookies.remove('loginToken')
+      cookies.remove('name')
       navigate('/')
     
   }
