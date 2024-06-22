@@ -24,9 +24,6 @@ function Dashboard(){
     
   }
 
-  const UserEntries = () => {
-    const [entries, setEntries] = useState([]);
-  
   const handleId = (id) => {
     cookies.set('entryId', id, {
       path: '/entryPage'
@@ -36,6 +33,11 @@ function Dashboard(){
        
     }, 2000)
   }
+
+  const UserEntries = () => {
+    const [entries, setEntries] = useState([]);
+  
+  
       axios.get('/api/otu-heart/myEntries', config)
       .then((res) => setEntries(res.data.message))
     
