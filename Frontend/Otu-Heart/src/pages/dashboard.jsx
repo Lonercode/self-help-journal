@@ -37,7 +37,7 @@ const handleId = (id) => {
     <h3>{item.title}</h3>
     <p id ="dateTime">{dateTime}</p><br/>
     <p>{item.content.substring(0, 100)}...</p>
-    <a href = "/entryPage" onClick={handleId(item._id)}>Read my thoughts</a>
+    <button type="button" onClick={handleId(item._id)}>Read my thoughts</button>
     </div>
     </>)
   })
