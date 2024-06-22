@@ -18,6 +18,7 @@ const PageEntry = () => {
   const ids = useParams()
   const id = String(ids)
   console.log(id)
+  console.log(ids)
   const navigate = useNavigate();
   const [entry, setEntry] = useState([]);
   
