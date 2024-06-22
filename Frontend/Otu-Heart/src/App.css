@@ -288,7 +288,7 @@ span{
 
 .entry {
   background-color: black;
-  width: 90%;
+  width: 70%;
   height: fit-content;
   object-fit: cover;
   position: relative;
@@ -520,7 +520,7 @@ span{
 
   .entry {
     
-    width: 90%;
+    width: 70%;
     border-radius: 2vw;
     margin: auto;
     margin-bottom: 3vh;
@@ -948,7 +948,7 @@ span{
   }
     
   #name {
-    font-size: 3vw;
+    font-size: 2vw;
     margin-right: -25vw;
   }
 
@@ -975,6 +975,15 @@ span{
   font-weight: bold;
   font-size: 2vw;
   
+}
+
+.entry {
+    
+  width: 70%;
+  border-radius: 2vw;
+  margin: auto;
+  margin-bottom: 3vh;
+  font-size: 4vw;
 }
 
 
