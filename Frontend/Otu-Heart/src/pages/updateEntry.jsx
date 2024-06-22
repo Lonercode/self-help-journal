@@ -22,8 +22,7 @@ function UpdateEntry(){
     const navigate = useNavigate()
     const [created, setCreated] = useState({title: title1, content: content1});
     const {title, content} = created;
-    const img =  `/api/${image1}`
-    const [image, setImage] = useState({image: img});
+    const [image, setImage] = useState({image: image1});
 
  
 
