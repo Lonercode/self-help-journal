@@ -11,7 +11,7 @@ const createRegToken = (user) => {
 }
 //create token for other routes
 const createToken = (user) => {
-    const token = jwt.sign({_id: user._id.toString("hex")}, process.env.JWT_SECRET, {expiresIn: "1d"})
+    const token = jwt.sign({_id: user._id.toString("hex")}, process.env.JWT_SECRET, {expiresIn: "15m"})
     return token
 }
 
