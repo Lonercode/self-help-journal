@@ -2,6 +2,7 @@ require('dotenv').config()
 const Entry = require('../models/entry.models')
 const user = require('../models/auth.models')
 const path = require('path')
+const UpdateEntry = require('../models/updateEntry.models')
 
 const cloudinary = require('cloudinary').v2
 
@@ -63,7 +64,7 @@ const createEntry = async(req, res, next) => {
 
 const updateEntry = async(req, res, next) => {
     try{
-    const entry = await Entry.findOne({_id: req.query._id, user: req.user})
+    const entry = await UpdateEntry.findOne({_id: req.query._id, user: req.user})
     const image = req.file
     const result = await cloudinary.uploader.upload(image.path, {
         folder: 'uploads'

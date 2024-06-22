@@ -64,7 +64,14 @@ function CreateEntry(){
             formData.append('image', image)
             formData.append('title', title)
             formData.append('content', content)
-            
+            const filez = document.getElementById('image')
+
+            if(filez.files.length == 0){
+                toast.error("You must add an image file", {
+                    position: 'top-right'
+                })
+            }
+            else{
 
             axios.post('/api/otu-heart/createEntry',formData,
             config,
@@ -79,7 +86,7 @@ function CreateEntry(){
               handleError(err)
             })
           }
-
+        }
     
 
     return (
