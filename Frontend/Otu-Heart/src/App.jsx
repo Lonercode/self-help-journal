@@ -57,7 +57,7 @@ function App() {
       <Route path = '/passwordNotification' element = {<Notification/>}/>
       <Route path = '/resetPassword' element = {<ResetPassword/>}/>
       <Route path = '/create' element = {<CreateEntry/>}/>
-      <Route path = '/entryPage' element = {<PageEntry/>}/>
+      <Route path = '/entryPage/:id' element = {<PageEntry/>}/>
       <Route path = '/update' element = {<UpdateEntry/>}/>
       <Route path = '/verify' element = {<VerifyRegistration/>}/>
       <Route path = '/test' element = {<Test/>}/>
