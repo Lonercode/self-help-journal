@@ -4,6 +4,8 @@ const auth = require('../models/auth.models')
 
 
 const entryModel = new entrySchema({
+
+    _id: new mongoose.Types.ObjectId(),
     
     image: {
         type: String,
