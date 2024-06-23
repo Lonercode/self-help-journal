@@ -40,24 +40,30 @@ function Nav() {
 }
 
 const tokenExpired = (token, name) => {
-  if (!token)
+  if (!token) return true
   try{
   
     const decoded = jwtDecode(token)
     const currTime = Date.now() / 1000;
-    if (decoded.exp < currTime){
-      return true  
-    }
+    return decoded.exp < currTime
+
   } catch(err){
     console.error(err)
+    return true
   }
 }
 
 
 function App() {
-const AuthWrapper = () => {
-  return tokenExpired(token, name) ? window.location.href = '/login': <Outlet/>
-}
+
+  useEffect(() => {
+    if(tokenExpired(token, name)){
+      cookies.remove(token)
+      cookies.remove(name)
+      window.location.href = '/login'
+    }
+  }, [])
+
 
   return (
     <>
@@ -69,9 +75,7 @@ const AuthWrapper = () => {
       <Route path = '/login' element = {<Login/>}/>
       <Route path = '/signup' element = {<Register/>}/>
       <Route path = '/about' element = {<About/>}/>
-      <Route element={<AuthWrapper/>}>
       <Route path = '/dashboard' element = {<Dashboard/>}/>
-      </Route>
       <Route path = '/affirmations' element = {<Affirm/>}/>
       <Route path = '/confirm' element = {<Confirm/>}/>
       <Route path = '/forgotPassword' element = {<ForgotPassword/>}/>
