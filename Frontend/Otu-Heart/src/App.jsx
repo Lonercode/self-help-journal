@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Home from './pages/home'
 import './App.css'
-import {BrowserRouter, Routes, Route, Outlet} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Outlet, Redirect} from 'react-router-dom';
 import Login from './pages/login';
 import Register from './pages/signUp'
 import About from './pages/about'
@@ -56,11 +56,16 @@ const tokenExpired = (token, name) => {
 
 function App() {
 
+const [LoggedIn, setLoggedIn] = useState(false)
+
   useEffect(() => {
     if(tokenExpired(token, name)){
+      setLoggedIn(false)
       cookies.remove(token)
       cookies.remove(name)
-      window.location.href = '/login'
+    }
+    else{
+      setLoggedIn(true)
     }
   }, [])
 
@@ -75,7 +80,9 @@ function App() {
       <Route path = '/login' element = {<Login/>}/>
       <Route path = '/signup' element = {<Register/>}/>
       <Route path = '/about' element = {<About/>}/>
-      <Route path = '/dashboard' element = {<Dashboard/>}/>
+      <Route path = '/dashboard'>
+      {LoggedIn? <Dashboard/>: <Redirect to='/login'/>}
+      </Route>
       <Route path = '/affirmations' element = {<Affirm/>}/>
       <Route path = '/confirm' element = {<Confirm/>}/>
       <Route path = '/forgotPassword' element = {<ForgotPassword/>}/>
