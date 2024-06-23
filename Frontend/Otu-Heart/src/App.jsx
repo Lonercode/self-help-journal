@@ -46,24 +46,19 @@ function App() {
 
   useEffect(() => {
     const tokenExpired = () => {
-      if (!token) {
-        window.location.href = '/login';
-        return
-      }
       try{
       
         const decoded = jwtDecode(token)
         const currTime = Date.now() / 1000;
         if (decoded.exp < currTime){
+          cookies.remove(token)
+          cookies.remove(name)
         window.location.href = '/login'
-        cookies.remove(token)
-        cookies.remove(name)
   
         }
     
       } catch(err){
         console.error(err)
-        window.location.href = '/login'
       }
     }
     
