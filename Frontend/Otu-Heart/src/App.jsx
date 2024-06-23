@@ -51,7 +51,9 @@ function App() {
         const decoded = jwtDecode(token)
         const currTime = Date.now() / 1000;
         if (decoded.exp < currTime){
-        window.location.href = '/login'
+          cookies.remove(token)
+          cookies.remove(name)
+        window.location.href = '/signup'
   
         }
     
