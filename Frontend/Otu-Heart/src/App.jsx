@@ -20,8 +20,7 @@ import NotFound from './pages/notFound'
 import {jwtDecode} from 'jwt-decode'
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
-const token = cookies.get('loginToken')
-const name = cookies.get('name')
+
 
 
 
@@ -45,7 +44,9 @@ function App() {
   
 
   useEffect(() => {
-    const tokenExpired = (token, name) => {
+    const tokenExpired = () => {
+      const token = localStorage.getItem('loginToken')
+      const name = localStorage.getItem('name')
       if (!token) {
         window.location.href = '/login';
         return
@@ -55,18 +56,18 @@ function App() {
         const decoded = jwtDecode(token)
         const currTime = Date.now() / 1000;
         if (decoded.exp < currTime){
-        cookies.remove(token)
-        cookies.remove(name)
+        localStorage.removeItem(token)
+        localStorage.removeItem(name)
         window.location.href = '/login'
         }
     
-      } catch(err){
-        console.error(err)
+      } catch(error){
+        console.error(error)
         window.location.href = '/login'
       }
     }
     
-    tokenExpired(token, name)
+    tokenExpired();
 
   }, []);
 
