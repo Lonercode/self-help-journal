@@ -57,6 +57,8 @@ function App() {
   
     const decoded = jwtDecode(token)
     const currTime = Date.now() / 1000;
+    console.log(decoded.exp)
+    console.log(currTime)
     return decoded.exp < currTime
   } catch(err){
     console.error(err)

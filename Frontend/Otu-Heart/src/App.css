@@ -297,7 +297,7 @@ span{
   border-radius: 1vw;
   height: 60vh;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   margin-right: 6vw;
   margin-top: 4vh;
 
@@ -532,6 +532,10 @@ span{
 
   .entry p{
     width: 60vw;
+  }
+
+  .entry img{
+    height: 30vh;
   }
 
   .entryDetails h3{
@@ -980,7 +984,7 @@ span{
   border-radius: 2vw;
   margin: auto;
   margin-bottom: 8vh;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 
