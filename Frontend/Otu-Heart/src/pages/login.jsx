@@ -51,7 +51,7 @@ function Login(){
             position: 'top-right'
         })
         setTimeout(() => {
-        navigate("/login");
+        navigate("/");
     }, 2000)
     }
 
