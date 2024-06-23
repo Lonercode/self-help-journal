@@ -40,9 +40,7 @@ function Nav() {
 }
 
 const tokenExpired = (token) => {
-  if (!token){
-  return true;
-  }
+  
   try{
   
     const decoded = jwtDecode(token)
