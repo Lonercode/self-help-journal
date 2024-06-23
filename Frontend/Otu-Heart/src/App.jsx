@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Home from './pages/home'
 import './App.css'
-import {BrowserRouter, Routes, Route, Outlet, Navigate} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Login from './pages/login';
 import Register from './pages/signUp'
 import About from './pages/about'
@@ -81,7 +81,7 @@ const [LoggedIn, setLoggedIn] = useState(false)
       <Route path = '/signup' element = {<Register/>}/>
       <Route path = '/about' element = {<About/>}/>
       <Route path = '/dashboard'>
-      {LoggedIn? <Dashboard/>: <Navigate to='/login'/>}
+      {LoggedIn? <Dashboard/>: <Login/>}
       </Route>
       <Route path = '/affirmations' element = {<Affirm/>}/>
       <Route path = '/confirm' element = {<Confirm/>}/>
