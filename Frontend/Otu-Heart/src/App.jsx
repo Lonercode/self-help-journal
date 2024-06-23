@@ -17,7 +17,7 @@ import UpdateEntry from './pages/updateEntry'
 import VerifyRegistration from './pages/verifyReg'
 import Test from './pages/test'
 import NotFound from './pages/notFound'
-import jwtDecode from 'jwt-decode'
+import {jwtDecode} from 'jwt-decode'
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
