@@ -66,7 +66,7 @@ function App() {
       }
     }
     
-    tokenExpired(token, name)
+    tokenExpired()
 
   }, []);
 
