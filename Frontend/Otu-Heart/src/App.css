@@ -283,7 +283,7 @@ span{
   background-color: black;
   width: 60%;
   height: fit-content;
-  object-fit: cover;
+  object-fit: contain;
   position: relative;
   border-radius: 1vw;
   margin: auto;
@@ -304,7 +304,7 @@ span{
 }
 
 .entry p{
-  width: 40vw;
+  width: 30vw;
   margin: auto;
   text-align: center;
 }
