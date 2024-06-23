@@ -19,7 +19,7 @@ const UserEntries = () => {
 
   
     axios.get('/api/otu-heart/myEntries', config)
-    .then((res) =>(res.data.message === 'Unauthorized token!')? window.location.href = '/login':
+    .then((res) =>(res.status == 401)?window.location.href = '/login':
     setEntries(res.data.message))
   
   
