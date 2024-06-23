@@ -22,8 +22,6 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
 const name = cookies.get('name')
-import { useHistory } from 'react-router-dom';
-i
 
 
 
@@ -46,7 +44,6 @@ function Nav() {
 
 function App() {
   
-  const history = useHistory()
   
   const tokenExpired = (token) => {
   if (!token){
@@ -70,10 +67,9 @@ function App() {
     if(tokenExpired(token)){
       cookies.remove(token)
       cookies.remove(name)
-      history.push('/login')
+      window.location.href = '/login'
     }
-  
-else{
+  })
   return (
     <>
     <Nav/>
@@ -101,7 +97,7 @@ else{
 
    </>
     )}
-  },[history])
-}
+
+
 
 export default App
