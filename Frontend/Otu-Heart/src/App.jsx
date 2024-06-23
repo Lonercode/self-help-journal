@@ -60,9 +60,8 @@ const tokenExpired = (token, name) => {
 function App() {
   
 
-  useEffect(() => {
-    tokenExpired(token, name)
-  }, [])
+
+  tokenExpired(token, name)
   return (
     <>
     <Nav/>
