@@ -19,8 +19,12 @@ const UserEntries = () => {
 
   
     axios.get('/api/otu-heart/myEntries', config)
-    .then((res) =>(res.status === 401)? console.log("why"):
-    setEntries(res.data.message))
+    .then((res) =>setEntries(res.data.message))
+    .catch((err) => {
+      if (err.res.status === 401){
+        window.location.href = '/login'
+      }
+    })
   
   
   let val = entries.map((item) => {
