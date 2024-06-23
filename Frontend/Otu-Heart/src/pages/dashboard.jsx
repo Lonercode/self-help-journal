@@ -22,7 +22,7 @@ const UserEntries = () => {
     .then((res) =>setEntries(res.data.message))
     .catch((err) => {
       if (err.res.status === 401){
-        window.location.href = '/login'
+        return window.location.href = '/login'
       }
     })
   
