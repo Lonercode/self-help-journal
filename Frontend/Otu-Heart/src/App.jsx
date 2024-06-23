@@ -66,13 +66,13 @@ const AuthWrapper = () => {
  
     <BrowserRouter>
     <Routes>
-      <Route element={<AuthWrapper/>}>
       <Route path='/' element = {<Home/>}/>
-      </Route>
       <Route path = '/login' element = {<Login/>}/>
       <Route path = '/signup' element = {<Register/>}/>
       <Route path = '/about' element = {<About/>}/>
+      <Route element={<AuthWrapper/>}>
       <Route path = '/dashboard' element = {<Dashboard/>}/>
+      </Route>
       <Route path = '/affirmations' element = {<Affirm/>}/>
       <Route path = '/confirm' element = {<Confirm/>}/>
       <Route path = '/forgotPassword' element = {<ForgotPassword/>}/>
