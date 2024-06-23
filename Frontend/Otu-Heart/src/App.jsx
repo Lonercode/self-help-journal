@@ -46,8 +46,6 @@ function App() {
 
   useEffect(() => {
     const tokenExpired = () => {
-      const token = token
-      const name = name
       if (!token) {
         window.location.href = '/login';
         return
