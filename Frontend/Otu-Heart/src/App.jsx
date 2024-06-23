@@ -61,7 +61,6 @@ function App() {
   
 
 
-  tokenExpired(token, name)
   return (
     <>
     <Nav/>
