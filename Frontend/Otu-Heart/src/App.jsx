@@ -39,18 +39,20 @@ function Nav() {
   )
 }
 
-const tokenExpired = (token) => {
+const tokenExpired = (token, name) => {
   
   try{
   
     const decoded = jwtDecode(token)
     const currTime = Date.now() / 1000;
-    console.log(decoded.exp)
-    console.log(currTime)
-    return decoded.exp < currTime
+    if (decoded.exp < currTime){
+      window.location.href = '/login'
+      cookies.remove(token)
+      cookies.remove(name)
+    }
   } catch(err){
     console.error(err)
-    return true;
+    window.location.href = '/login'
   }
 }
 
@@ -59,11 +61,7 @@ function App() {
   
 
   useEffect(() => {
-    if(tokenExpired(token)){
-      cookies.remove(token)
-      cookies.remove(name)
-      window.location.href = '/login'
-    }
+    tokenExpired(token, name)
   }, [])
   return (
     <>
