@@ -39,16 +39,9 @@ function Nav() {
   )
 }
 
-
-
-
-function App() {
-  
-  
-  const tokenExpired = (token) => {
+const tokenExpired = (token) => {
   if (!token){
   return true;
-  
   }
   try{
   
@@ -63,13 +56,17 @@ function App() {
   }
 }
 
+
+function App() {
+  
+
   useEffect(() => {
     if(tokenExpired(token)){
       cookies.remove(token)
       cookies.remove(name)
       window.location.href = '/login'
     }
-  })
+  }, [])
   return (
     <>
     <Nav/>
