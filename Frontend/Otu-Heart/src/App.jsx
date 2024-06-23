@@ -39,35 +39,36 @@ function Nav() {
   )
 }
 
-const tokenExpired = (token, name) => {
-  if (!token) return true
-  try{
-  
-    const decoded = jwtDecode(token)
-    const currTime = Date.now() / 1000;
-    return decoded.exp < currTime
-
-  } catch(err){
-    console.error(err)
-    return true
-  }
-}
-
 
 function App() {
 
-const [LoggedIn, setLoggedIn] = useState(false)
+  
 
   useEffect(() => {
-    if(tokenExpired(token, name)){
-      setLoggedIn(false)
-      cookies.remove(token)
-      cookies.remove(name)
+    const tokenExpired = (token, name) => {
+      if (!token) {
+        window.location.href = '/login';
+        return
+      }
+      try{
+      
+        const decoded = jwtDecode(token)
+        const currTime = Date.now() / 1000;
+        if (decoded.exp < currTime){
+        cookies.remove(token)
+        cookies.remove(name)
+        window.location.href = '/login'
+        }
+    
+      } catch(err){
+        console.error(err)
+        window.location.href = '/login'
+      }
     }
-    else{
-      setLoggedIn(true)
-    }
-  }, [])
+    
+    tokenExpired(token, name)
+
+  }, []);
 
 
   return (
@@ -80,9 +81,7 @@ const [LoggedIn, setLoggedIn] = useState(false)
       <Route path = '/login' element = {<Login/>}/>
       <Route path = '/signup' element = {<Register/>}/>
       <Route path = '/about' element = {<About/>}/>
-      <Route path = '/dashboard'>
-      {LoggedIn? <Dashboard/>: <Login/>}
-      </Route>
+      <Route path = '/dashboard' element = {<Dashboard/>}/>
       <Route path = '/affirmations' element = {<Affirm/>}/>
       <Route path = '/confirm' element = {<Confirm/>}/>
       <Route path = '/forgotPassword' element = {<ForgotPassword/>}/>
