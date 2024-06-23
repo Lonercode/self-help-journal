@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Home from './pages/home'
 import './App.css'
-import {BrowserRouter, Routes, Route, Navigate, Outlet, useNavigate} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Outlet} from 'react-router-dom';
 import Login from './pages/login';
 import Register from './pages/signUp'
 import About from './pages/about'
@@ -55,9 +55,8 @@ const tokenExpired = (token, name) => {
 
 
 function App() {
-const navigate = useNavigate()
 const AuthWrapper = () => {
-  return tokenExpired(token, name) ? navigate('/login'): <Outlet/>
+  return tokenExpired(token, name) ? window.location.href = '/login': <Outlet/>
 }
 
   return (
