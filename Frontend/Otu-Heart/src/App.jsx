@@ -53,8 +53,8 @@ function App() {
         console.log(decoded.exp)
         console.log(currTime)
         if (decoded.exp < currTime){
-          cookies.remove(token)
-          cookies.remove(name)
+          cookies.remove(token, {path: '/'})
+          cookies.remove(name, {path: '/'})
   
         }
     
