@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Home from './pages/home'
 import './App.css'
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Navigate, Outlet} from 'react-router-dom';
 import Login from './pages/login';
 import Register from './pages/signUp'
 import About from './pages/about'
@@ -40,16 +40,13 @@ function Nav() {
 }
 
 const tokenExpired = (token, name) => {
-  
+  if (!token)
   try{
   
     const decoded = jwtDecode(token)
     const currTime = Date.now() / 1000;
     if (decoded.exp < currTime){
-      cookies.remove(token)
-      cookies.remove(name)
-      window.location.href = '/login'
-      
+      return true  
     }
   } catch(err){
     console.error(err)
@@ -59,7 +56,9 @@ const tokenExpired = (token, name) => {
 
 function App() {
   
-
+const AuthWrapper = () => {
+  return tokenExpired(token, name) ? <Navigate to='/login' replace />: <Outlet/>
+}
 
   return (
     <>
@@ -67,7 +66,9 @@ function App() {
  
     <BrowserRouter>
     <Routes>
+      <Route element={<AuthWrapper/>}>
       <Route path='/' element = {<Home/>}/>
+      </Route>
       <Route path = '/login' element = {<Login/>}/>
       <Route path = '/signup' element = {<Register/>}/>
       <Route path = '/about' element = {<About/>}/>
