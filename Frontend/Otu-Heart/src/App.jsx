@@ -66,7 +66,7 @@ const AuthWrapper = ()  => {
     window.location.reload()
   }
   else{
-    <Outlet/>
+    return <Outlet/>
   }
 
 }
