@@ -40,8 +40,6 @@ function Nav() {
 
 function App() {
 
-  const navigate = useNavigate()
-
   const [NotLoggedIn, setNotLoggedIn] = useState(true);
 
   useEffect(() => {
