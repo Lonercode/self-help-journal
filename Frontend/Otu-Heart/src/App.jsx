@@ -62,8 +62,7 @@ const tokenExpired = (token, name) => {
 
 const AuthWrapper = ()  => {
   if (tokenExpired(token, name)){
-    window.location.href = '/login'
-    window.location.reload()
+    return window.location.href = '/login'
   }
   else{
     return <Outlet/>
