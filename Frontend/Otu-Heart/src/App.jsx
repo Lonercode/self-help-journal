@@ -50,6 +50,9 @@ const tokenExpired = (token, name) => {
       return true
 
     }
+    else{
+      return false
+    }
 
   } catch(err){
     console.error(err)
