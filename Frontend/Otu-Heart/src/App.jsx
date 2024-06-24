@@ -40,8 +40,9 @@ function Nav() {
 
 function App() {
 
+  const tokenExpired = () => {
   useEffect(() => {
-    const tokenExpired = () => {
+   
       const token = cookies.get('loginToken')
       const name = cookies.get('name')
 
@@ -60,11 +61,14 @@ function App() {
         console.error(err)
         window.location.href = '/login'
       }
-    }
     
-    tokenExpired()
-
   }, []);
+
+}
+    
+    tokenExpired();
+
+
 
 
   return (
@@ -93,7 +97,8 @@ function App() {
     </BrowserRouter>
 
    </>
-    )}
+    )
+  }
 
 
 
