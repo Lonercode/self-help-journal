@@ -54,10 +54,9 @@ function App() {
         const decoded = jwtDecode(token)
         const currTime = Date.now() / 1000;
         if (decoded.exp < currTime){
-          setNotLoggedIn(true)
           cookies.remove(token)
           cookies.remove(name)
-          window.location.href = '/login'
+          setNotLoggedIn(true)
   
         }
         else{
@@ -74,7 +73,7 @@ function App() {
 
 
   return (
-    NotLoggedIn ? navigate("/login"):
+    NotLoggedIn ? window.location.href = "/login":
     <>
     <Nav/>
     <BrowserRouter>
