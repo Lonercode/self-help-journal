@@ -68,14 +68,6 @@ const UserEntries = () => {
 
 function Dashboard(){
   
-  const navigate = useNavigate();
-  
-  const logout = () => {
-      cookies.remove('loginToken')
-      cookies.remove('name')
-      navigate('/')
-    
-  }
   
     return (
         <>
@@ -83,7 +75,7 @@ function Dashboard(){
         <UserEntries/>
         <div id = "dashboardButtons">
        <a href= "/create"><button type = "button" id = "dashbutton">Create</button></a>
-        <button type = "button" onClick={logout} id = "dashbutton">Logout</button>
+        <a href = "/affirmations"><button type = "button"  id = "dashbutton">Affirmations</button></a>
         </div>
         </>
     )

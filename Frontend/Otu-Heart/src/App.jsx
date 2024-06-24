@@ -82,10 +82,10 @@ function App() {
       <Route path = '/forgotPassword' element = {<ForgotPassword/>}/>
       <Route path = '/passwordNotification' element = {<Notification/>}/>
       <Route path = '/resetPassword' element = {<ResetPassword/>}/>
-      <Route path = '/create' element = {<CreateEntry/>}/>
       <Route path='/' element = {<Home/>}/>
       <Route path = '/verify' element = {<VerifyRegistration/>}/>
       <Route element = {<AuthWrapper/>}>
+      <Route path = '/create' element = {<CreateEntry/>}/>
       <Route path = '/dashboard' element = {<Dashboard/>}/>
       <Route path = '/entryPage/:id' element = {<PageEntry/>}/>
       <Route path = '/update' element = {<UpdateEntry/>}/>
