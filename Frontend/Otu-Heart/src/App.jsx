@@ -62,7 +62,10 @@ const AuthWrapper = ()  => {
   if (tokenExpired(token, name)){
     cookies.remove(token)
     cookies.remove(name)
-    return window.location.href = '/login'
+    setTimeout(() => {
+      return window.location.href = '/login'
+    }, 3000)
+
   }
   else{
     return <Outlet/>
