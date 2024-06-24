@@ -20,6 +20,8 @@ import NotFound from './pages/notFound'
 import {jwtDecode} from 'jwt-decode'
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
+const token = cookies.get('loginToken')
+const name = cookies.get('name')
 
 
 
@@ -38,9 +40,7 @@ function Nav() {
 }
 
 
-const tokenExpired = () => {
-  const token = cookies.get('loginToken')
-  const name = cookies.get('name')
+const tokenExpired = (token, name) => {
 
   try{
   
@@ -49,18 +49,19 @@ const tokenExpired = () => {
     if (decoded.exp < currTime){
       cookies.remove(token)
       cookies.remove(name)
+      return true
 
     }
 
   } catch(err){
     console.error(err)
+    return true
   }
-  return true
 
 }
 
 const AuthWrapper = ()  => {
-  return tokenExpired() ? window.location.href = '/login': <Outlet/>
+  return tokenExpired(token, name) ? window.location.href = '/login': <Outlet/>
 }
 
 
@@ -88,7 +89,6 @@ function App() {
       <Route path = '/dashboard' element = {<Dashboard/>}/>
       <Route path = '/entryPage/:id' element = {<PageEntry/>}/>
       <Route path = '/update' element = {<UpdateEntry/>}/>
-
       </Route>
       <Route path = '/test' element = {<Test/>}/>
       <Route path = '*' element = {<NotFound/>}/>
