@@ -75,7 +75,7 @@ function Dashboard(){
         <UserEntries/>
         <div id = "dashboardButtons">
        <a href= "/create"><button type = "button" id = "dashbutton">Create</button></a>
-        <a href = "/affirmations"><button type = "button"  id = "dashbutton">Affirmations</button></a>
+        <a href = "/affirmations2"><button type = "button"  id = "dashbutton">Affirmations</button></a>
         </div>
         </>
     )

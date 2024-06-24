@@ -15,10 +15,10 @@ import CreateEntry from './pages/createEntry'
 import PageEntry from './pages/entryPage'
 import UpdateEntry from './pages/updateEntry'
 import VerifyRegistration from './pages/verifyReg'
-import Test from './pages/test'
 import NotFound from './pages/notFound'
 import {jwtDecode} from 'jwt-decode'
 import Cookies from 'universal-cookie';
+import Affirm2 from './pages/affirm2';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
 const name = cookies.get('name')
@@ -98,8 +98,9 @@ function App() {
       <Route path = '/dashboard' element = {<Dashboard/>}/>
       <Route path = '/entryPage/:id' element = {<PageEntry/>}/>
       <Route path = '/update' element = {<UpdateEntry/>}/>
+      <Route path = '/affirmations2' element = {<Affirm2/>}/>
       </Route>
-      <Route path = '/test' element = {<Test/>}/>
+     
       <Route path = '*' element = {<NotFound/>}/>
     </Routes>
     </BrowserRouter>
