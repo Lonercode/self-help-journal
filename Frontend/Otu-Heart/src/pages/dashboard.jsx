@@ -20,13 +20,6 @@ const UserEntries = () => {
   
     axios.get('/api/otu-heart/myEntries', config)
     .then((res) =>setEntries(res.data.message))
-    .catch((res) => {
-      if (res.status === 401){
-        cookies.remove(token)
-        cookies.remove(name)
-        return window.location.href = '/login'
-      }
-    })
     
   
   
