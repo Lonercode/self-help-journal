@@ -22,6 +22,7 @@ import Affirm2 from './pages/affirm2';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
 const name = cookies.get('name')
+import AuthWrapper from './pages/authWrapper';
 
 
 
@@ -37,43 +38,6 @@ function Nav() {
   </nav>
   </>
   )
-}
-
-
-const tokenExpired = (token, name) => {
-
-  try{
-  
-    const decoded = jwtDecode(token)
-    const currTime = Date.now() / 1000;
-    if (decoded.exp < currTime){
-      return true
-
-    }
-    else{
-      return false
-    }
-
-  } catch(err){
-    console.error(err)
-    return true
-  }
-
-}
-
-const AuthWrapper = ()  => {
-  if (tokenExpired(token, name)){
-    cookies.remove(token)
-    cookies.remove(name)
-    setTimeout(() => {
-      return window.location.href = '/login'
-    }, 3000)
-
-  }
-  else{
-    return <Outlet/>
-  }
-
 }
 
 
