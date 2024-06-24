@@ -66,7 +66,7 @@ function App() {
         window.location.href = '/login'
       }
     
-  }, []);
+  }, [NotLoggedIn]);
 
 
 
