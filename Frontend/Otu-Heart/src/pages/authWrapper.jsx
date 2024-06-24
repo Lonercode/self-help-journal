@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const token = cookies.get('loginToken')
@@ -25,7 +25,7 @@ const tokenExpired = (token, name) => {
   
   }
   
-  const AuthWrapper = ({children})  => {
+  const AuthWrapper = ()  => {
 
     const navigate = useNavigate()
 
@@ -39,7 +39,7 @@ const tokenExpired = (token, name) => {
   
     }
     else{
-      return <>{children}</>
+      return <Outlet/>
     }
   
   }
