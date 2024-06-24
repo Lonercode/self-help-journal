@@ -47,8 +47,6 @@ const tokenExpired = (token, name) => {
     const decoded = jwtDecode(token)
     const currTime = Date.now() / 1000;
     if (decoded.exp < currTime){
-      cookies.remove(token)
-      cookies.remove(name)
       return true
 
     }
@@ -62,6 +60,8 @@ const tokenExpired = (token, name) => {
 
 const AuthWrapper = ()  => {
   if (tokenExpired(token, name)){
+    cookies.remove(token)
+    cookies.remove(name)
     return window.location.href = '/login'
   }
   else{
