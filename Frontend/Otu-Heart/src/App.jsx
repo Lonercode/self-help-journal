@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Home from './pages/home'
 import './App.css'
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, useNavigate} from 'react-router-dom';
 import Login from './pages/login';
 import Register from './pages/signUp'
 import About from './pages/about'
@@ -40,7 +40,10 @@ function Nav() {
 
 function App() {
 
-  const tokenExpired = () => {
+  const navigate = useNavigate()
+
+  const [NotLoggedIn, setNotLoggedIn] = useState(true);
+
   useEffect(() => {
    
       const token = cookies.get('loginToken')
@@ -51,10 +54,14 @@ function App() {
         const decoded = jwtDecode(token)
         const currTime = Date.now() / 1000;
         if (decoded.exp < currTime){
+          setNotLoggedIn(true)
           cookies.remove(token)
           cookies.remove(name)
           window.location.href = '/login'
   
+        }
+        else{
+          setNotLoggedIn(false)
         }
     
       } catch(err){
@@ -64,17 +71,12 @@ function App() {
     
   }, []);
 
-}
-    
-    tokenExpired();
-
-
 
 
   return (
+    NotLoggedIn ? navigate("/login"):
     <>
     <Nav/>
- 
     <BrowserRouter>
     <Routes>
       <Route path='/' element = {<Home/>}/>
