@@ -49,13 +49,13 @@ const tokenExpired = () => {
     if (decoded.exp < currTime){
       cookies.remove(token)
       cookies.remove(name)
-      return true
 
     }
 
   } catch(err){
     console.error(err)
   }
+  return true
 
 }
 
@@ -73,22 +73,23 @@ function App() {
     <Nav/>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element = {<Home/>}/>
-      <Route element = {<AuthWrapper/>}>
       <Route path = '/login' element = {<Login/>}/>
-      </Route>
       <Route path = '/signup' element = {<Register/>}/>
       <Route path = '/about' element = {<About/>}/>
-      <Route path = '/dashboard' element = {<Dashboard/>}/>
       <Route path = '/affirmations' element = {<Affirm/>}/>
       <Route path = '/confirm' element = {<Confirm/>}/>
       <Route path = '/forgotPassword' element = {<ForgotPassword/>}/>
       <Route path = '/passwordNotification' element = {<Notification/>}/>
       <Route path = '/resetPassword' element = {<ResetPassword/>}/>
       <Route path = '/create' element = {<CreateEntry/>}/>
+      <Route path='/' element = {<Home/>}/>
+      <Route path = '/verify' element = {<VerifyRegistration/>}/>
+      <Route element = {<AuthWrapper/>}>
+      <Route path = '/dashboard' element = {<Dashboard/>}/>
       <Route path = '/entryPage/:id' element = {<PageEntry/>}/>
       <Route path = '/update' element = {<UpdateEntry/>}/>
-      <Route path = '/verify' element = {<VerifyRegistration/>}/>
+
+      </Route>
       <Route path = '/test' element = {<Test/>}/>
       <Route path = '*' element = {<NotFound/>}/>
     </Routes>
