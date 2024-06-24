@@ -38,46 +38,45 @@ function Nav() {
 }
 
 
-function App() {
+const tokenExpired = () => {
+  const token = cookies.get('loginToken')
+  const name = cookies.get('name')
 
-  const [NotLoggedIn, setNotLoggedIn] = useState(true);
-
-  useEffect(() => {
-   
-      const token = cookies.get('loginToken')
-      const name = cookies.get('name')
-
-      try{
-      
-        const decoded = jwtDecode(token)
-        const currTime = Date.now() / 1000;
-        if (decoded.exp < currTime){
-          cookies.remove(token)
-          cookies.remove(name)
-          setNotLoggedIn(true)
+  try{
   
-        }
-        else{
-          setNotLoggedIn(false)
-        }
-    
-      } catch(err){
-        console.error(err)
-        window.location.href = '/login'
-      }
-    
-  }, [NotLoggedIn]);
+    const decoded = jwtDecode(token)
+    const currTime = Date.now() / 1000;
+    if (decoded.exp < currTime){
+      cookies.remove(token)
+      cookies.remove(name)
+      return true
 
+    }
+
+  } catch(err){
+    console.error(err)
+  }
+
+}
+
+const AuthWrapper = ()  => {
+  return tokenExpired() ? window.location.href = '/login': <Outlet/>
+}
+
+
+function App() {  
 
 
   return (
-    NotLoggedIn ? window.location.href = "/login":
+
     <>
     <Nav/>
     <BrowserRouter>
     <Routes>
       <Route path='/' element = {<Home/>}/>
+      <Route element = {<AuthWrapper/>}>
       <Route path = '/login' element = {<Login/>}/>
+      </Route>
       <Route path = '/signup' element = {<Register/>}/>
       <Route path = '/about' element = {<About/>}/>
       <Route path = '/dashboard' element = {<Dashboard/>}/>
