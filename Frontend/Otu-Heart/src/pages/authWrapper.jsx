@@ -30,9 +30,8 @@ const tokenExpired = (token, name) => {
     if (tokenExpired(token, name)){
       cookies.remove(token)
       cookies.remove(name)
-      setTimeout(() => {
-        navigate('/login')
-      }, 2000)
+      return navigate('/login')
+      
   
     }
     else{
