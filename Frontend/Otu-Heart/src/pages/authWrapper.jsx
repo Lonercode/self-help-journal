@@ -35,7 +35,6 @@ const tokenExpired = (token, name) => {
       setTimeout(() => {
         navigate('/login')
       }, 2000)
-      return null
   
     }
     else{
