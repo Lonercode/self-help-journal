@@ -42,32 +42,6 @@ function Nav() {
 
 function App() {
 
-  
-
-  useEffect(() => {
-    const tokenExpired = () => {
-      try{
-      
-        const decoded = jwtDecode(token)
-        const currTime = Date.now() / 1000;
-        console.log(decoded.exp)
-        console.log(currTime)
-        if (decoded.exp < currTime){
-          cookies.remove(token)
-          cookies.remove(name)
-  
-        }
-    
-      } catch(err){
-        console.error(err)
-      }
-    }
-    
-    tokenExpired()
-
-  }, [token, name]);
-
-
   return (
     <>
     <Nav/>
