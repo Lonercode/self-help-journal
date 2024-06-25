@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 import Cookies from 'universal-cookie';
 const cookies = new Cookies()
+const token1 = cookies.get('loginToken')
+const name1 = cookies.get('name')
 
 
 
@@ -59,6 +61,8 @@ function Login(){
     //on success
 
     const handleSuccess = async (msg, tok, nme) => {
+        cookies.remove(token1)
+        cookies.remove(name1)
         toast.success(msg, {
             position: 'top-right'
         })
