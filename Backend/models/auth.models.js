@@ -1,36 +1,16 @@
 const mongoose = require('mongoose')
 const authSchema = mongoose.Schema
-const Joi = require('joi')
+const joi = require('joi')
+const joigoose = require('joigoose')(mongoose)
 
 
-const authModel = new authSchema({
-
-
-    name:{
-        type: String,
-        unique: true,
-        required: true,
-        maxlength: 30,
-        minLength: 6
-    },
-    email:{
-        type: String,
-        unique: true,
-        required: true
-    },
-    password: {
-        type: String,
-        unique: true,
-        required: true,
-        minLength: 8
-    },
-    
-    verified: {
-        type: Boolean,
-        default: false
-    }
-
+const joiSchema = joi.object({
+    name: joi.string().min(6).max(30).required(),
+    email: joi.string().email().unique().required(),
+    password: joi.string().min(8).required(),
+    verified: joi.boolean().default(false)
 })
 
+const authModel = new authSchema(joigoose.convert(joiSchema))
 
 module.exports = mongoose.model("auth", authModel)
