@@ -50,7 +50,6 @@ const getEntry = async(req, res, next) => {
 const createEntry = async(req, res, next) => {
     try{
         const image = req.file
-        console.log(image)
         const result = await cloudinary.uploader.upload(image.path, {
             folder: 'uploads'
         });
@@ -69,36 +68,43 @@ const createEntry = async(req, res, next) => {
     }
 }
 
-const updateEntry = async(req, res, next) => {
-    try{
-    const entry = await Entry.findOne({_id: req.query._id, user: req.user})
-   
+const updateEntry = async (req, res, next) => {
+    try {
+        const entry = await Entry.findOne({ _id: req.query._id, user: req.user });
 
-    if (entry){
-    await Entry.findOneAndUpdate(
-        {_id: req.query._id},
-        {$set: 
-        {
-        title: req.body.title,
-        content: req.body.content
-        },
-    },
-    {new: true},
-        )
+        if (!entry) {
+            return res.status(401).json({ message: "Unauthorized" });
+        }
 
-        await entry.save()
-        res.status(200).json({message: "Edit successful :)"})
-}
+        let updateFields = {
+            title: req.body.title || entry.title,
+            content: req.body.content || entry.content
+        };
 
-    
-    else{
-        res.status(401).json({message: "Unauthorized"})
+        if (req.file) {
+            if (entry.imagePublicUrl) {
+                await cloudinary.uploader.destroy(entry.imagePublicUrl);
+            }
+
+            const result = await cloudinary.uploader.upload(req.file.path, {
+                folder: 'uploads'
+            });
+
+            updateFields.image = result.secure_url;
+            updateFields.imagePublicUrl = result.public_id;
+        }
+
+        const updatedEntry = await Entry.findOneAndUpdate(
+            { _id: req.query._id, user: req.user },
+            { $set: updateFields },
+            { new: true }
+        );
+
+        res.status(200).json({ message: "Edit successful :)", entry: updatedEntry });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
-    }
-    catch(err){
-        res.status(500).json({message: err.message})
-    }
-}
+};
 
 
 
