@@ -386,7 +386,7 @@ span{
 
 #dashboardButtons{
   display: flex;
-
+  justify-content: space-around;
 }
 
 
@@ -525,7 +525,7 @@ span{
   
   #name {
     font-size: 5vw;
-    margin-right: -25vw;
+    margin-right: 2vw;
   }
 
   
