@@ -83,7 +83,7 @@ const updateEntry = async (req, res, next) => {
 
         if (req.file) {
             if (entry.imagePublicUrl) {
-                await cloudinary.uploader.destroy(entry.imagePublicUrl);
+                await cloudinary.uploader.destroy(entry.image);
             }
 
             const result = await cloudinary.uploader.upload(req.file.path, {
