@@ -82,11 +82,11 @@ const updateEntry = async (req, res, next) => {
         };
 
         if (req.file) {
-            if (entry.imagePublicUrl) {
+            if (entry.image) {
                 await cloudinary.uploader.destroy(entry.image);
             }
-
-            const result = await cloudinary.uploader.upload(req.file.path, {
+            const image = req.file
+            const result = await cloudinary.uploader.upload(image.path, {
                 folder: 'uploads'
             });
 
