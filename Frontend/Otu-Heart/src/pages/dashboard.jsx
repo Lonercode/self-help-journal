@@ -14,32 +14,32 @@ const config = {
 
 const UserEntries = () => {
   const [entries, setEntries] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1); // Current page state
-  const [totalPages, setTotalPages] = useState(1); // Total pages state
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1); 
 
   const fetchEntries = async (page) => {
     try {
       const response = await axios.get(`/api/otu-heart/myEntries?page=${page}&limit=5`, config);
       setEntries(response.data.message);
-      setTotalPages(response.data.totalPages); // Set total pages from response
+      setTotalPages(response.data.totalPages);
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    fetchEntries(currentPage); // Fetch entries on component mount and when page changes
+    fetchEntries(currentPage);
   }, [currentPage]);
 
   const handleNext = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1); // Go to next page
+      setCurrentPage(currentPage + 1);
     }
   };
 
   const handlePrevious = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1); // Go to previous page
+      setCurrentPage(currentPage - 1);
     }
   };
 

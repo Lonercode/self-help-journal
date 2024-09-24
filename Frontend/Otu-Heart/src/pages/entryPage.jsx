@@ -28,6 +28,11 @@ const PageEntry = () => {
 }, 2000)
 
 
+cookies.set('image', entry.image, {
+  path: '/update'
+})
+
+
   cookies.set('title', entry.title, {
     path: '/update'
   })
