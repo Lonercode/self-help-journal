@@ -25,7 +25,7 @@ body {
   margin: 0;
   display: flex;
  
-  min-width: 100vw;
+  min-width: fit-content;
   min-height: 100vh;
   margin-bottom: 6vh;
  
