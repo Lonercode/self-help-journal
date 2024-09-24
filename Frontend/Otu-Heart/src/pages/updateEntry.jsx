@@ -53,7 +53,7 @@ function UpdateEntry() {
       position: 'top-right',
     });
     setTimeout(() => {
-      navigate("/dashboard");
+      navigate(`/entryPage/${id}`);
     }, 2000);
   };
 
@@ -61,7 +61,7 @@ function UpdateEntry() {
     e.preventDefault();
     const formData = new FormData();
 
-    // Append the other form fields
+
     formData.append('title', title);
     formData.append('content', content);
 
