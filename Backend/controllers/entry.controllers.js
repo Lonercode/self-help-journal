@@ -68,41 +68,40 @@ const createEntry = async(req, res, next) => {
     }
 }
 
-const updateEntry = async (req, res, next) => {
+const updateEntry = async(req, res, next) => {
     try {
+
         const entry = await Entry.findOne({ _id: req.query._id, user: req.user });
 
         if (!entry) {
             return res.status(401).json({ message: "Unauthorized" });
         }
 
-        let updateFields = {
-            title: req.body.title,
-            content: req.body.content
-        };
-
+     
         if (req.file) {
+           
             if (entry.image) {
                 await cloudinary.uploader.destroy(entry.image);
             }
-            const image = req.file
-            const result = await cloudinary.uploader.upload(image.path, {
+
+    
+            const result = await cloudinary.uploader.upload(req.file.path, {
                 folder: 'uploads'
             });
 
-            updateFields.image = result.secure_url;
-            updateFields.imagePublicUrl = result.public_id;
+            
+            entry.image = result.secure_url;
+            entry.imagePublicUrl = result.public_id;
         }
 
-        const updatedEntry = await Entry.findOneAndUpdate(
-            { _id: req.query._id},
-            { $set: updateFields },
-            { new: true }
-        );
+        
+        entry.title = req.body.title || entry.title;
+        entry.content = req.body.content || entry.content;
 
-        await entry.save()
+        
+        await entry.save();
 
-        res.status(200).json({ message: "Edit successful :)", entry: updatedEntry });
+        res.status(200).json({ message: "Edit successful :)" });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
