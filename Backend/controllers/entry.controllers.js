@@ -95,10 +95,12 @@ const updateEntry = async (req, res, next) => {
         }
 
         const updatedEntry = await Entry.findOneAndUpdate(
-            { _id: req.query._id, user: req.user },
+            { _id: req.query._id},
             { $set: updateFields },
             { new: true }
         );
+
+        await entry.save()
 
         res.status(200).json({ message: "Edit successful :)", entry: updatedEntry });
     } catch (err) {
