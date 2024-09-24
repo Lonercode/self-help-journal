@@ -14,10 +14,19 @@ cloudinary.config({
 
 const getEntries = async(req, res, next) => {
     try{
+    const page = req.query.page || 1
+    const limit = 5
+
     const entries = await Entry.find({
         user: req.user
+    }).skip((page - 1) * limit).limit(limit)
+    const totalEntries = await Entry.countDocuments({user: req.user})
+
+    res.status(200).json({
+        message: entries,
+        totalPages: Math.ceil(totalEntries/limit),
+        totalEntries
     })
-    res.status(200).json({message: entries})
 }
 catch(err){
     res.status(500).json({message: err.message})
