@@ -65,7 +65,7 @@ const UserEntries = () => {
       </div>
       <div className="pagination">
         <button onClick={handlePrevious} disabled={currentPage === 1}>
-          Previous
+          Prev
         </button>
         <span> Page {currentPage} of {totalPages} </span>
         <button onClick={handleNext} disabled={currentPage === totalPages}>
