@@ -77,8 +77,8 @@ const updateEntry = async (req, res, next) => {
         }
 
         let updateFields = {
-            title: req.body.title || entry.title,
-            content: req.body.content || entry.content
+            title: req.body.title,
+            content: req.body.content
         };
 
         if (req.file) {
