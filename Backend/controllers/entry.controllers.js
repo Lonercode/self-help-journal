@@ -92,8 +92,7 @@ const updateEntry = async(req, res, next) => {
             
             entry.image = result.secure_url;
             entry.imagePublicUrl = result.public_id;
-            entry.title = req.body.title || entry.title;
-            entry.content = req.body.content || entry.content;
+           
         }
 
         
