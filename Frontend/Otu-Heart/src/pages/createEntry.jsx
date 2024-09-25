@@ -6,6 +6,8 @@ const cookies = new Cookies();
 const token = cookies.get('loginToken')
 const name = cookies.get('name')
 import {ToastContainer, toast} from 'react-toastify';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 
 const config = {
@@ -102,7 +104,7 @@ function CreateEntry(){
             <input id="title" type="text" value={title} onChange={handleOnChange} name = 'title'></input><br/>
 
             <label id= "content"><b><i>Your reflection</i></b></label>
-            <textarea id="txtarea" type="text" value={content} onChange={handleOnChange} name = 'content'></textarea>
+            <ReactQuill id="txtarea" type="text" value={content} onChange={handleOnChange} name = 'content'/>
            
             <button type="submit" id="Loginbut1">Save</button>
             <a href="#"><button type="button" id="Loginbut2">Delete</button></a>
