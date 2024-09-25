@@ -33,6 +33,13 @@ function CreateEntry(){
             [name] : value
         })
     }
+
+    const handleContentChange = (value) => {
+        setCreated({
+          ...created,
+          content: value,
+        });
+      };
     
 
     const handleError = (err) => {
@@ -104,7 +111,7 @@ function CreateEntry(){
             <input id="title" type="text" value={title} onChange={handleOnChange} name = 'title'></input><br/>
 
             <label id= "content"><b><i>Your reflection</i></b></label>
-            <ReactQuill id="txtarea" type="text" value={content} onChange={handleOnChange} name = 'content'/>
+            <ReactQuill id="txtarea" type="text" value={content} onChange={handleContentChange} name = 'content'/>
            
             <button type="submit" id="Loginbut1">Save</button>
             <a href="#"><button type="button" id="Loginbut2">Delete</button></a>
