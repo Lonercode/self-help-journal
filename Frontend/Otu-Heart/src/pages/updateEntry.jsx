@@ -17,13 +17,6 @@ const config = {
   headers: { 'Content-Type': 'multipart/form-data', 'Authorization': `Bearer ${token}` },
 };
 
-// Function to strip HTML tags using DOMParser
-function stripHtmlTags(html) {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
-  return doc.body.textContent || "";
-}
-
 function UpdateEntry() {
   const navigate = useNavigate();
   const [created, setCreated] = useState({
@@ -64,7 +57,7 @@ function UpdateEntry() {
     }, 2000);
   };
 
-  const handleSuccess = async (msg) => {
+  const handleSuccess = (msg) => {
     toast.success(msg, {
       position: 'top-right',
     });
@@ -75,10 +68,9 @@ function UpdateEntry() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const plainContent = stripHtmlTags(content);
     const formData = new FormData();
     formData.append('title', title);
-    formData.append('content', plainContent);
+    formData.append('content', content); // Save raw HTML content
 
     if (imageFile) {
       formData.append('image', imageFile);
@@ -140,6 +132,7 @@ function UpdateEntry() {
 
           <a href="/dashboard"><button type="button" id="dashboardbt">My Dashboard</button></a>
         </form>
+
         <img src='images/leisure.png' id="leisure" />
         <img src='images/tablet.png' id="tablet" />
       </div>

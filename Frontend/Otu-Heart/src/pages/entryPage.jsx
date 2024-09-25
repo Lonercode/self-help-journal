@@ -1,72 +1,63 @@
-import { useEffect, useState } from "react"
-import axios from 'axios'
-import { useNavigate, useParams } from "react-router-dom"
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useNavigate, useParams } from "react-router-dom";
 import Cookies from 'universal-cookie';
-const cookies = new Cookies();
-const token = cookies.get('loginToken')
-import dateFormat from 'dateformat'
+import dateFormat from 'dateformat';
+import DOMPurify from 'dompurify';
 
+const cookies = new Cookies();
+const token = cookies.get('loginToken');
 
 const config = {
-  headers: {Authorization: `Bearer ${token}`}
-}
-
+  headers: { Authorization: `Bearer ${token}` },
+};
 
 const PageEntry = () => {
-  const ids = useParams()
+  const ids = useParams();
   const navigate = useNavigate();
-  const [entry, setEntry] = useState([]);
-  
+  const [entry, setEntry] = useState({});
 
-    
-  axios.get(`/api/otu-heart/myEntry?_id=${ids.id}`, config)
-  .then((res) => setEntry(res.data.message))
-  setTimeout(() => {
-    cookies.set('id', entry._id, {
-      path: '/update'
-    })
-}, 2000)
+  useEffect(() => {
+    const fetchEntry = async () => {
+      try {
+        const res = await axios.get(`/api/otu-heart/myEntry?_id=${ids.id}`, config);
+        setEntry(res.data.message);
 
+       
+        cookies.set('id', res.data.message._id, { path: '/update' });
+        cookies.set('image', res.data.message.image, { path: '/update' });
+        cookies.set('title', res.data.message.title, { path: '/update' });
+        cookies.set('content', res.data.message.content, { path: '/update' });
+      } catch (error) {
+        console.error("Error fetching entry:", error);
+      }
+    };
 
-cookies.set('image', entry.image, {
-  path: '/update'
-})
+    fetchEntry();
+  }, [ids.id, config]);
 
+  const dateTime = dateFormat(entry.date, "mmmm dS, yyyy");
+  const imageLink = entry.image;
 
-  cookies.set('title', entry.title, {
-    path: '/update'
-  })
+  // Sanitize the content for safe rendering
+  const sanitizedContent = DOMPurify.sanitize(entry.content);
 
-
-  cookies.set('content', entry.content, {
-    path: '/update'
-  })
-
-
-
-
-
-  const dateTime =  dateFormat(entry.date, "mmmm dS, yyyy")
-  const imageLink = entry.image
   return (
     <>
-    <div className="entryDetails">
-    <img src={imageLink}/>
-    <h3>{entry.title}</h3>
-    <p id ="dateTime">{dateTime}</p><br/>
-    <p>{entry.content}</p>
-    <div id = "dashboardButtons">
-    <a href= "/update"><button type = "button">Update</button></a>
-    <a href= "/dashboard"><button type = "button">Dashboard</button></a>
-   
-    </div>
-    </div>
+      <div className="entryDetails">
+        <img src={imageLink} alt={entry.title} />
+        <h3>{entry.title}</h3>
+        <p id="dateTime">{dateTime}</p>
+        <br />
+        {/* Use dangerouslySetInnerHTML to render sanitized HTML */}
+        <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
+        <div id="dashboardButtons">
+          <a href="/update"><button type="button">Update</button></a>
+          <a href="/dashboard"><button type="button">Dashboard</button></a>
+        </div>
+      </div>
     </>
-  )
+  );
+};
 
-  
-}
-
-
-
-export default PageEntry
+export default PageEntry;
