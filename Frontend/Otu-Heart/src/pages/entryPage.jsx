@@ -39,7 +39,7 @@ const PageEntry = () => {
   const dateTime = dateFormat(entry.date, "mmmm dS, yyyy");
   const imageLink = entry.image;
 
-  // Sanitize the content for safe rendering
+ 
   const sanitizedContent = DOMPurify.sanitize(entry.content);
 
   return (
