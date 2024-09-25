@@ -66,6 +66,15 @@ function UpdateEntry() {
     }, 2000);
   };
 
+  const handleDeleteSuccess = (msg) => {
+    toast.success(msg, {
+      position: 'top-right',
+    });
+    setTimeout(() => {
+      navigate('/dashboard');
+    }, 2000);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -87,7 +96,7 @@ function UpdateEntry() {
   const handleDelete = (e) => {
     e.preventDefault();
     axios.delete(`/api/otu-heart/deleteEntry?_id=${id}`, config, { withCredentials: true })
-      .then((res) => handleSuccess(res.data.message))
+      .then((res) => handleDeleteSuccess(res.data.message))
       .catch(err => {
         console.log(err);
         handleError(err);
