@@ -607,11 +607,11 @@ span{
   }
 
   .loginForm input {
-    font-size: 6vw;
+    font-size: 4vw;
   }
 
-  .loginForm textarea {
-    font-size: 4vw;
+  .loginForm #txtarea {
+    font-size: 6vw;
 
 }
 
