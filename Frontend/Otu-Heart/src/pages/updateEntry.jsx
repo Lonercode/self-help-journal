@@ -23,7 +23,6 @@ function stripHtmlTags(html) {
   return tmp.textContent || tmp.innerText || "";
 }
 
-
 function UpdateEntry() {
   const navigate = useNavigate();
   const [created, setCreated] = useState({
@@ -34,7 +33,6 @@ function UpdateEntry() {
 
   const [imageFile, setImageFile] = useState(null);
   
-
   const { title, content } = created;
 
   const handleFileChange = (e) => {
@@ -50,6 +48,7 @@ function UpdateEntry() {
   };
 
   const handleContentChange = (value) => {
+   
     setCreated({
       ...created,
       content: value,
@@ -74,7 +73,8 @@ function UpdateEntry() {
     }, 2000);
   };
 
-  const plainContent = stripHtmlTags(content)
+ 
+  const plainContent = stripHtmlTags(content);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -132,7 +132,7 @@ function UpdateEntry() {
           <label id="content"><b><i>Your reflection</i></b></label>
           <ReactQuill
             id="txtarea"
-            value={plainContent}
+            value={content}
             onChange={handleContentChange}
             name="content"
           />
