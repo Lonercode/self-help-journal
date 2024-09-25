@@ -15,6 +15,12 @@ const config = {
   
 }
 
+function stripHtmlTags(html) {
+    const tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+  }
+
 
 function CreateEntry(){
 
@@ -23,7 +29,7 @@ function CreateEntry(){
     const {title, content} = created;
     const [image, setImage] = useState();
 
-    
+    const plainContent = stripHtmlTags(content)
 
 
     const handleOnChange = (e) => {
@@ -65,7 +71,7 @@ function CreateEntry(){
             const formData = new FormData();
             formData.append('image', image)
             formData.append('title', title)
-            formData.append('content', content)
+            formData.append('content', plainContent)
             const filez = document.getElementById('image')
 
             if(filez.files.length == 0){
@@ -104,7 +110,7 @@ function CreateEntry(){
             <input id="title" type="text" value={title} onChange={handleOnChange} name = 'title'></input><br/>
 
             <label id= "content"><b><i>Your reflection</i></b></label>
-            <ReactQuill id="txtarea" type="text" value={content} onChange={handleOnChange} name = 'content'/>
+            <ReactQuill id="txtarea" type="text" value={plainContent} onChange={handleOnChange} name = 'content'/>
            
             <button type="submit" id="Loginbut1">Save</button>
             <a href="#"><button type="button" id="Loginbut2">Delete</button></a>

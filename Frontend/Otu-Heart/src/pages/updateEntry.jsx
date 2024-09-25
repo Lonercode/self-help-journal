@@ -17,6 +17,13 @@ const config = {
   headers: { 'Content-Type': 'multipart/form-data', 'Authorization': `Bearer ${token}` },
 };
 
+function stripHtmlTags(html) {
+  const tmp = document.createElement("DIV");
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || "";
+}
+
+
 function UpdateEntry() {
   const navigate = useNavigate();
   const [created, setCreated] = useState({
@@ -26,6 +33,7 @@ function UpdateEntry() {
   });
 
   const [imageFile, setImageFile] = useState(null);
+  
 
   const { title, content } = created;
 
@@ -66,11 +74,13 @@ function UpdateEntry() {
     }, 2000);
   };
 
+  const plainContent = stripHtmlTags(content)
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('title', title);
-    formData.append('content', content);
+    formData.append('content', plainContent);
 
     if (imageFile) {
       formData.append('image', imageFile);
@@ -122,7 +132,7 @@ function UpdateEntry() {
           <label id="content"><b><i>Your reflection</i></b></label>
           <ReactQuill
             id="txtarea"
-            value={content}
+            value={plainContent}
             onChange={handleContentChange}
             name="content"
           />
