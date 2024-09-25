@@ -426,6 +426,16 @@ span{
     position:relative;
     margin-top: 3vh;
   }
+
+  #Loginbut1{
+    margin-top: 20vh;
+  }
+  
+  #Loginbut2{
+    float:right;
+    margin-top: 20vh;
+  }
+  
   
   .circle1 {
 
