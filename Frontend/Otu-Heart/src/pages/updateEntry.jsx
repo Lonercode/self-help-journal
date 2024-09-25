@@ -3,6 +3,9 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import { ToastContainer, toast } from 'react-toastify';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+
 
 const cookies = new Cookies();
 const token = cookies.get('loginToken');
@@ -114,13 +117,13 @@ function UpdateEntry() {
           /><br />
 
           <label id="content"><b><i>Your reflection</i></b></label>
-          <textarea
+          <ReactQuill
             id="txtarea"
             type="text"
             value={content}
             onChange={handleOnChange}
             name="content"
-          ></textarea>
+          />
 
           <button type="submit" id="Loginbut1">Save</button>
           <button type="button" id="Loginbut2" onClick={handleDelete}>Delete</button>
