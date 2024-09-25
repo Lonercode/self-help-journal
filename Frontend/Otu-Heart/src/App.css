@@ -130,10 +130,12 @@
 
 #Loginbut1{
   float:left;
+  margin-top: 10vh;
 }
 
 #Loginbut2{
   float:right;
+  margin-top: 10vh;
 }
 
 .loginForm button a{
