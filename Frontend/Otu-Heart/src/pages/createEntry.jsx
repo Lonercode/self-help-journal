@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
-import axios from 'axios'
-import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 import ReactQuill from 'react-quill';
@@ -13,10 +13,11 @@ const config = {
   headers: { 'Content-Type': 'multipart/form-data', 'Authorization': `Bearer ${token}` },
 };
 
+// Function to strip HTML tags using DOMParser
 function stripHtmlTags(html) {
-  const tmp = document.createElement("DIV");
-  tmp.innerHTML = html;
-  return tmp.textContent || tmp.innerText || "";
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  return doc.body.textContent || "";
 }
 
 function CreateEntry() {
@@ -65,7 +66,7 @@ function CreateEntry() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const plainContent = stripHtmlTags(content); // remove HTML tags before submitting
+    const plainContent = stripHtmlTags(content);
     const formData = new FormData();
     formData.append('image', image);
     formData.append('title', title);

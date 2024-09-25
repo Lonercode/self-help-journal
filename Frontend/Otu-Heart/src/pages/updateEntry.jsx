@@ -17,10 +17,11 @@ const config = {
   headers: { 'Content-Type': 'multipart/form-data', 'Authorization': `Bearer ${token}` },
 };
 
+// Function to strip HTML tags using DOMParser
 function stripHtmlTags(html) {
-  const tmp = document.createElement("DIV");
-  tmp.innerHTML = html;
-  return tmp.textContent || tmp.innerText || "";
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  return doc.body.textContent || "";
 }
 
 function UpdateEntry() {
@@ -48,7 +49,6 @@ function UpdateEntry() {
   };
 
   const handleContentChange = (value) => {
-   
     setCreated({
       ...created,
       content: value,
@@ -73,11 +73,9 @@ function UpdateEntry() {
     }, 2000);
   };
 
- 
-  const plainContent = stripHtmlTags(content);
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    const plainContent = stripHtmlTags(content);
     const formData = new FormData();
     formData.append('title', title);
     formData.append('content', plainContent);
