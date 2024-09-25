@@ -329,7 +329,6 @@ span{
 
 .entryDetails{
   text-align: center;
-  width: 60vw;
 }
 
 .entryDetails img{
@@ -396,6 +395,16 @@ span{
   justify-content: space-around;
 }
 
+.sanitized-content {
+  padding: 0;
+  margin: 0;
+  white-space: normal;
+}
+
+.sanitized-content li {
+  margin: 0;
+  padding: 0;
+}
 
 /*Mobiles*/
 
