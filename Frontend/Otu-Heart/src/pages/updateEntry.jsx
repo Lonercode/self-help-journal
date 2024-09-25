@@ -6,12 +6,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-
 const cookies = new Cookies();
 const token = cookies.get('loginToken');
 const id = cookies.get('id');
-const title1 = cookies.get('title');
-const content1 = cookies.get('content');
+const title1 = cookies.get('title') || '';
+const content1 = cookies.get('content') || '';
 const image1 = cookies.get('image');
 
 const config = {
@@ -25,7 +24,7 @@ function UpdateEntry() {
     title: title1,
     content: content1,
   });
-  
+
   const [imageFile, setImageFile] = useState(null);
 
   const { title, content } = created;
@@ -42,8 +41,15 @@ function UpdateEntry() {
     });
   };
 
+  const handleContentChange = (value) => {
+    setCreated({
+      ...created,
+      content: value,
+    });
+  };
+
   const handleError = (err) => {
-    toast.error(err, {
+    toast.error(err.response?.data?.message || 'An error occurred', {
       position: 'top-right',
     });
     setTimeout(() => {
@@ -63,12 +69,9 @@ function UpdateEntry() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-
-
     formData.append('title', title);
     formData.append('content', content);
 
-    
     if (imageFile) {
       formData.append('image', imageFile);
     }
@@ -119,9 +122,8 @@ function UpdateEntry() {
           <label id="content"><b><i>Your reflection</i></b></label>
           <ReactQuill
             id="txtarea"
-            type="text"
             value={content}
-            onChange={handleOnChange}
+            onChange={handleContentChange}
             name="content"
           />
 
