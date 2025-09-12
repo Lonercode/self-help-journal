@@ -1,3 +1,5 @@
+<img width="1920" height="907" alt="otu-heart" src="https://github.com/user-attachments/assets/6ad7eb2a-57f1-4ff4-987b-d1cb51dcf968" />
+
 # self-help-journal
 >
 > ***The app targets node 18.7.0***\
